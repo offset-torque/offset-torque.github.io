@@ -946,7 +946,7 @@
             <b>How to open:</b>
             <ul>
                 <li>with a long-tap on the <span class=ui>Status Bar</span> area at the bottom of your screen</li>
-                <li>From this menu: <div class="menu-breadcrumbs"> TOP MENU / <img class="img_inline" src="pictures/top_bookmark.svg" style="width:26px;"> / Skim document</div></li>
+                <li>From this menu: <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_bookmark.svg" style="width:26px;"> / Skim document</div></li>
                 <li>You can assign a gesture to it</li>
                 <li>You can add it to your <span class=ui>Quick Menu</span></li>
             </ul>
@@ -964,7 +964,7 @@
 
         <p>If you want to use the <span class=ui>compact skim widget</span>, you can do this by choosing <span class=ui>Top</span> or <span class=ui>Bottom</span> from this menu:</p>
 
-        <div class="menu-breadcrumbs"> TOP MENU / <img class="img_inline" src="pictures/gear.svg" style="width:26px;"> / Navigation / Skim dialog position:</div>
+        <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/gear.svg" style="width:26px;"> / Navigation / Skim dialog position:</div>
 
         <div class=tip><p style="text-indent: 0rem;"><span class="label_green">TIP</span> Both skim widgets are movable. You can move them by pressing on an empty area of the widget and dragging. Also you can make these dialogs semi-transparent by long-pressing on an empty area on the widget.</p></div>
 
@@ -1177,8 +1177,9 @@
         <hr>
 
     <div class="L3-Smaller-heading">- Chapter progress bar</div>
-    <p>Progress bar normally shows your whole book. But it can also show your progress in the current chapter. You can assign a gesture to switch between these two progress bars.</p>
-    ***add menu path if exists
+    <p>Progress bar normally shows your whole book. But it can also show your progress in the current chapter. In addition to enabling it from the menu, you can assign a gesture to switch between these two progress bars.</p>
+
+    <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/gear.svg" style="width:26px;"> / Status Bar / Progress bar / Show chapter progress bar instead</div>
 
     <hr>
 
@@ -1211,15 +1212,19 @@
 
 
     <table align="center" style="border-collapse: collapse;">
-        <tr><td colspan="2" style="padding: 1rem;"><p>You are currently reading the <b>English</b> version of the <b>KOReader User Guide</b>. We also have other languages which are translated by volunteers. We have many translations in progress but only languages which are translated <b>above 50%</b> are included in the list below for usability reasons.</p>
+        <tr><td colspan="2" style="padding: 1rem;"><p>You are currently reading the <b>English</b> version of the <b>KOReader User Guide</b>. We also have other languages which are translated by volunteers. We have many translations in progress but only languages which are translated <b>above 50%</b> are linked below for usability reasons.</p>
             
         <p>To see all the languages currently being translated and contribute to the translation efforts of the user guide, please visit the <a href="https://hosted.weblate.org/projects/koreader/user-guide/">Weblate translation page</a> of our project.</p>
         </td></tr>
 
-        <tr><td><p><span class="label_blue">More than 80% translated</span></p></td><td><p><span class="label_orange">50% to 80% translated</span></p></td></tr>
+
+
+        <tr><td><p><b>Available languages</b></p></td><td><p><b>Overall translation status</b></p></td></tr>
         
         <tr>
             <td style="width: 50%; vertical-align: top;">
+            <p><span class="label_blue">More than 80% translated</span></p>
+
             <ul style="margin-left: 0rem;">
                 <li><a href="https://koreader.rocks/user_guide/zh_Hans.html">🇨🇳 Chinese (Simplified Han script)</a></li>
                 <li><a href="https://koreader.rocks/user_guide/ko.html">🇰🇷 Korean</a></li>
@@ -1227,11 +1232,16 @@
                 <li><a href="https://koreader.rocks/user_guide/ta.html">🇮🇳 Tamil</a></li>
                 <li><a href="https://koreader.rocks/user_guide/uk.html">🇺🇦 Ukrainian</a></li>
             </ul>
-            </td>
-            <td style="width: 50%; vertical-align: top;">
+
+            <p><span class="label_orange">50% to 80% translated</span></p>
             <ul style="margin-left: 0rem; vertical-align: top;">
                 <li><a href="https://koreader.rocks/user_guide/es.html">🇪🇸 Spanish</a></li>
             </ul>
+            </td>
+            <td style="width: 50%; vertical-align: top;">
+
+                <img loading="lazy" src="https://hosted.weblate.org/widget/koreader/user-guide/multi-auto.svg" alt="Translation status"" style="width:500px;">
+
             </td>
         </tr>
     </table>
@@ -1385,7 +1395,7 @@
     
     <p><span class="ui">Bottom status bar</span> is the newer one which is actively maintained. <span class="ui">Alt status bar</span> is a remnant from earlier versions of KOReader so we are not adding new features to it. But you can still enable this <span class="ui">Alt status bar</span> if you find it useful. You can enable it from:</p>
  
-    <div class="menu-breadcrumbs">⇓ BOTTOM MENU / <img class="img_inline" src="pictures/gear.svg" style="width:26px;"> / Alt Status Bar</div>
+    <div class="menu-breadcrumbs">BOTTOM MENU / <img class="img_inline" src="pictures/gear.svg" style="width:26px;"> / Alt Status Bar</div>
 
     <p>You can configure the <span class="ui">Alt status bar</span> from this menu:</p>
 
@@ -1522,7 +1532,7 @@
 <div class="L3-Smaller-heading">Sleep cover problems</div>
 <p>Sleep covers generally use a magnet embedded in the cover which enables wake up and sleep events via triggering a sensor in your device. This sensor can sometimes be mentioned as a <b>Hall sensor</b> or <b>Hall effect sensor</b>. In some cases like misaligned or weak magnets, this triggering can be problematic. If you are having problems with waking up your device with your cover, you can disable this feature via this menu:</p>
 
-<div class="menu-breadcrumbs"><span class="icon_green"> </span> TOP MENU / <img class="img_inline" src="pictures/gear.svg" style="width:26px;"> / Device / Ignore all sleep cover events</div>
+<div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/gear.svg" style="width:26px;"> / Device / Ignore all sleep cover events</div>
 
 
 
