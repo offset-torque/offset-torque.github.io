@@ -4,7 +4,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>KOReader User Guide</title>
+<title>User Guide Check</title>
 
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 
@@ -63,9 +63,9 @@
     
     /* DARK THEME COLORS */
     body.dark {
-        --bg-color: #1e1c19;
-        --container-color: #0E0801;
-        --text-color: #F6E8C3;
+        --bg-color: #0E0801;
+        --container-color: #1e1c19;
+        --text-color: #D9CBA5;
     
         --red-color: #ff615b;
         --green-color: #CDDC39;
@@ -73,7 +73,9 @@
         --orange-color: #FFB300;
         --link-color: #56d8c9;
         --external-color: #ff61c5;
+        --image-filter: invert(1);
     }
+
 
     
     
@@ -177,7 +179,14 @@
         border-radius: 8px;
         background: var(--container-color);
     }
-    
+
+.dark img {
+        
+    filter: brightness(0.6) contrast(1.4) sepia(0.3);
+}
+
+
+
     /* INLINE IMAGES */
     .img_inline {
         height: auto;
@@ -720,24 +729,25 @@ Key improvements and explanations:
     More spacing: Added for more visual separation between sections, and nested lists.
 -->
 
-<div class="L2-Sub-heading">Guide 25.02 Update Check - CORRECTIONS</div>
+<div class="L2-Sub-heading">Guide 25.03 Update Check - CORRECTIONS</div>
 <br>
 <br>
-<p><span class="highlight">Dear devs, sections are fixed according to your suggestions. Changed parts are marked like this sentence if it is a bigger change or in green highlight as in the example below if it is a partial change:</span></p>
+
+<!-- <p><span class="highlight">Dear devs, sections are fixed according to your suggestions. Changed parts are marked like this sentence if it is a bigger change or in green highlight as in the example below if it is a partial change:</span></p>
 
 
 <p><span class="green-mark"><b>I HAVE BEEN MODIFIED, PLEASE CHECK ME !!!</b></span></p>
-<br>
+<br> -->
 
 
 <p>You can click on your name below to directly go to your section:</p>
 
 
     <ul>
-        <li><a href="#mergen3107">mergen3107</a></li>
+        <!-- <li><a href="#mergen3107">mergen3107</a></li>
         <li><a href="#ryanwwest">ryanwwest</a></li>
         <li><a href="#commodore64user">Commodore64User</a></li>
-        <li><a href="#poirez">poire-z</a></li>
+        <li><a href="#poirez">poire-z</a></li> -->
         <li><a href="#hius07">hius07</a></li>
         <!-- <li><a href="#frenzie">Frenzie</a></li> -->
 
@@ -749,7 +759,7 @@ Key improvements and explanations:
     
     <div class="L1-Chapter-heading"  id="mergen3107">@ mergen3107</div>
 
-    <div class="L2-Sub-heading">Nightly versions</div>
+    <!-- <div class="L2-Sub-heading">Nightly versions</div>
     <p>KOReader has two different versions:</p>
         <ul>
             <li><span class="label_green">STABLE</span> This version is the main one that you can find on the <b>Releases</b> page of the project GitHub. It is named like this: <b>"KOReader 2024.11"</b> which means this specific version is released on <b>November 2024</b>. This is generally a <b>monthly</b> release, but sometimes can take longer.</li>
@@ -765,17 +775,13 @@ Key improvements and explanations:
 
     <p>This section was just a general introduction to the topic. For detailed information and asking for help about nightly versions, you can visit the discussion page: <a href="https://github.com/koreader/koreader/issues/11068">FAQ: How to track latest nightly builds</a></p>
 
-    <div class=tip><p style="text-indent: 0rem;"><span class="label_green">TIP</span> If you are using KOReader on an Android device, you can use the <b>Work Profile</b> feature of the Android OS to test the Nightly versions without affecting your main KOReader installation. Open source applications like <b>Shelter</b> and <b>Island</b> can help you with this.</p></div>
+    <div class=tip><p style="text-indent: 0rem;"><span class="label_green">TIP</span> If you are using KOReader on an Android device, you can use the <b>Work Profile</b> feature of the Android OS to test the Nightly versions without affecting your main KOReader installation. Open source applications like <b>Shelter</b> and <b>Island</b> can help you with this.</p></div> -->
 
     <!-- ANCHOR ryanwwest -->
 
 <div class="L1-Chapter-heading"  id="ryanwwest">@ ryanwwest</div>
 
-<p><span class="highlight">Numbers in front of the changes refers to your feedback bullet number</span></p>
-
-<p><span class="highlight">Feedback bullet no.3 is handled with the green menu breadcrumbs now</span></p>
-
-<div class="L2-Sub-heading">Library organization and individual book settings</div>
+<!-- <div class="L2-Sub-heading">Library organization and individual book settings</div>
 
 
     <p>KOReader stores settings and extra information related to your books in the same directory as your book file. We call this <b>metadata</b> and it includes:</p>
@@ -795,7 +801,7 @@ Key improvements and explanations:
     <div class=warning><p style="text-indent: 0rem;"><span class="label_red">WARNING</span> We strongly advise reading the section below to understand the differences and how each method works before making any changes. Otherwise there is a risk of losing your book settings, progress and annotations.</p></div>
 
 
-<div class="L3-Smaller-heading"><span class="green-mark">2 →  1. Individual metadata folders next to the book files</span></div>
+<div class="L3-Smaller-heading">1. Individual metadata folders next to the book files</div>
 
         <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/gear.svg" style="width:26px;"> / Document / Book metadata location: book folder</div>
 
@@ -810,7 +816,7 @@ Key improvements and explanations:
 
     <p><b><span class="label_red">Negatives</span></b></p>
         <ul>
-            <li><span class="green-mark">1 → If you reorganize your library by moving/renaming the book files or their accompanying .sdr folder outside of KOReader file browser, you will lose metadata of those books without any warning.</span></li>
+            <li>If you reorganize your library by moving/renaming the book files or their accompanying .sdr folder outside of KOReader file browser, you will lose metadata of those books without any warning.</li>
             <li>These <b>.sdr</b> folders will be visible when you browse your library directories with another file browser or from your computer, which may clutter your view.</li>
         </ul>
 
@@ -830,7 +836,7 @@ Key improvements and explanations:
 
         <p><b><span class="label_red">Negatives</span></b></p>
         <ul>
-            <li><span class="green-mark">1 → If you reorganize your library by moving/renaming the moving/renaming library directories, book files or their accompanying .sdr folder outside of KOReader file browser, you will lose metadata of those books without any warning.</span></li>
+            <li>If you reorganize your library by moving/renaming the moving/renaming library directories, book files or their accompanying .sdr folder outside of KOReader file browser, you will lose metadata of those books without any warning.</li>
 
             <li>Since your book metadata will not be in your library folders, any synchronization or backups of your library will not include them.</li>
         </ul>
@@ -840,9 +846,9 @@ Key improvements and explanations:
 
         <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/gear.svg" style="width:26px;"> / Document / Book metadata location: .../koreader/hashdocsettings</div>
 
-        <p>This method is similar to the previous one as the <b>.sdr</b> folders will be under an internal directory. But this method is developed to address the shortcomings of the previous method. <span class="green-mark">4 → Because, normally if you rename a book outside KOReader (with the native file manager/reader of the device or from a connected computer), its <b>.sdr</b> folder name will no longer match and your metadata for that book will be lost. <b>If you are only using the KOReader File Browser for file operations, this is automatically handled so there are no repercussions.</span></b></p>
+        <p>This method is similar to the previous one as the <b>.sdr</b> folders will be under an internal directory. But this method is developed to address the shortcomings of the previous method. Because, normally if you rename a book outside KOReader (with the native file manager/reader of the device or from a connected computer), its <b>.sdr</b> folder name will no longer match and your metadata for that book will be lost. <b>If you are only using the KOReader File Browser for file operations, this is automatically handled so there are no repercussions.</b></p>
         
-        <p>In this <b>HASHED</b> method, <b>.sdr</b> folders are not identified by the filepath/filename of the book. Instead, a partial <b>MD5 hash</b> will be used to link the books to their settings. <span class="green-mark">5 → This hash is used as a unique ID for the book and it is calculated based on the <b>contents of the book file</b>. Also same hash is used for naming its .sdr folder.</span></p>
+        <p>In this <b>HASHED</b> method, <b>.sdr</b> folders are not identified by the filepath/filename of the book. Instead, a partial <b>MD5 hash</b> will be used to link the books to their settings. This hash is used as a unique ID for the book and it is calculated based on the <b>contents of the book file</b>. Also same hash is used for naming its .sdr folder.</p>
             
 
         <p><b><span class="label_green">Benefits</span></b></p>
@@ -851,15 +857,15 @@ Key improvements and explanations:
 
                 <li>You can rename, move, and copy your books with another file browser or from your computer. KOReader will still recognize the books after these operations.</li>
 
-                <li><span class="green-mark">7 → In this method, KOReader associates the same <b>.sdr</b> folder with all copies of the book, even if these copies are on different devices. For example if you are using <b>Syncthing</b>, this method enables you to sync your <span class=ui>/hashdocsettings</span> folder alongside your book files, across many devices that all have KOReader installed. Despite the different relative paths of those books on each device, you can still get your annotations and progress synchronized across your devices. This isn't possible with other methods.</span></li>
+                <li>In this method, KOReader associates the same <b>.sdr</b> folder with all copies of the book, even if these copies are on different devices. For example if you are using <b>Syncthing</b>, this method enables you to sync your <span class=ui>/hashdocsettings</span> folder alongside your book files, across many devices that all have KOReader installed. Despite the different relative paths of those books on each device, you can still get your annotations and progress synchronized across your devices. This isn't possible with other methods.</li>
             </ul>
     
             <p><b><span class="label_red">Negatives</span></b></p>
             <ul>
-                <li><span class="green-mark">8 → Any operations that modify the file directly (such as writing highlights into PDFs or downloading from <b>Calibre</b>) will change the file so its <b>MD5 ID will change</b> (unlike renaming or moving which is safe with this method). In this case KOReader wouldn't be able to recognize the book so these books will lose their metadata.</span></li>
+                <li>Any operations that modify the file directly (such as writing highlights into PDFs or downloading from <b>Calibre</b>) will change the file so its <b>MD5 ID will change</b> (unlike renaming or moving which is safe with this method). In this case KOReader wouldn't be able to recognize the book so these books will lose their metadata.</li>
 
-                <li><span class="green-mark">6 →  Calculating file IDs may slow down <span class=ui>File browser</span> navigation when browsing larger directories.</span></li>
-            </ul>
+                <li>Calculating file IDs may slow down <span class=ui>File browser</span> navigation when browsing larger directories.</li>
+            </ul> -->
 
             
 
@@ -867,11 +873,9 @@ Key improvements and explanations:
 
     <div class="L1-Chapter-heading" id="commodore64user">@ Commodore64User</div>
 
-    <span class="highlight">This section is totally rewritten</span>
-
-    <div class="L2-Sub-heading" id="keyboardshortcuts">Keyboard Shortcuts</div>
+    <!-- <div class="L2-Sub-heading" id="keyboardshortcuts">Keyboard Shortcuts</div>
     
-    <p>If you have a device with a keyboard like <b>Kindle 2</b> and <b>Kindle 3</b>, including Bluetooth keyboards and emulators, you can use the keyboard keys and shortcuts to control KOReader. <b>Kindle 4</b> is supported too, which lacks a full keyboard but still has enough keys to make it functional in this context. On these devices, KOReader will enable an extra menu named <span class=ui>Keyboard Shortcuts</span> which you can access here:</p>
+    <p>If you have a device with a keyboard like <b>Kindle 2</b> and <b>Kindle 3</b>, including Bluetooth keyboards and emulators, you can use the keyboard buttons and shortcuts to control KOReader. <b>Kindle 4</b> is supported too, which lacks a full keyboard but still has enough keys to make it functional in this context. On these devices, KOReader will enable an extra menu named <span class=ui>Keyboard Shortcuts</span> which you can access here:</p>
 
     <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/gear.svg" style="width:26px;"> / Navigation / Physical buttons / Keyboard shortcuts</div>
         
@@ -890,13 +894,10 @@ Key improvements and explanations:
 
         
 
-        <div class=info><p style="text-indent: 0rem;"><span class="label_blue">INFO</span> Universal <span class=ui>screenshot</span> key is <b>Alt + Shift + G</b>. It is available on all screens, modes and platforms.</p></div>
+        <div class=info><p style="text-indent: 0rem;"><span class="label_blue">INFO</span> Universal <span class=ui>screenshot</span> key is <b>Alt + Shift + G</b>. It is available on all screens, modes and platforms. On Kindle 4, it is <b>Keyboard + Menu</b>.</p></div>
 
+        <div class=info><p style="text-indent: 0rem;"><span class="label_blue">INFO</span> If you have a Kindle 4, <b>SHIFT</b> key in the table below is mapped to your <b>KEYBOARD</b> button. So <b>Shift + (UP/DOWN/LEFT/RIGHT)</b> shortcuts are mapped to <b>Keyboard button + (UP/DOWN/LEFT/RIGHT)</b> on your Kindle 4.</p></div>
 
-        <span class="highlight">TABLE CHANGES: Arrow → items in the table are added from nightly (desktop appimage) / obsolete shortcuts are removed from this table</span>
-<br>
-        <span class="highlight">If there are some Kindle specific ones that I can't see on desktop, we can add them.</span>
-    
 
         <div class="centering-div">
 
@@ -942,27 +943,27 @@ Key improvements and explanations:
                 <td><b>Esc</b></td>
             </tr>
             <tr>
-                <td><span class="green-mark">→ </span>Bookmarks</td>
+                <td>Bookmarks</td>
                 <td><b>Shift + Left</b></td>
             </tr>
             <tr>
-                <td><span class="green-mark">→ </span>Toggle bookmark</td>
+                <td>Toggle bookmark</td>
                 <td><b>Shift + Right</b></td>
             </tr>
             <tr>
-                <td><span class="green-mark">→ </span>Dictionary lookup</td>
-                <td><b>Ctrl + D</b></td>
+                <td>Dictionary lookup</td>
+                <td><b>Ctrl + D (Alt + D on Kindles)</b></td>
             </tr>
             <tr>
-                <td><span class="green-mark">→ </span>Wikipedia lookup</td>
+                <td>Wikipedia lookup</td>
                 <td><b>Ctrl + W</b></td>
             </tr>
             <tr>
-                <td><span class="green-mark">→ </span>Fulltext search</td>
+                <td>Fulltext search</td>
                 <td><b>Ctrl + S</b></td>
             </tr>
             <tr>
-                <td><span class="green-mark">→ </span>File search lookup</td>
+                <td>File search lookup</td>
                 <td><b>Ctrl + F</b></td>
             </tr>
 
@@ -1026,11 +1027,11 @@ Key improvements and explanations:
                 <td><b>Left-Right / Up-Down<br>Page Up-Page Down</b></td>
             </tr>
             <tr>
-                <td><span class="green-mark">→ </span>Table of contents</td>
+                <td>Table of contents</td>
                 <td><b>Shift + Up</b></td>
             </tr>
             <tr>
-                <td><span class="green-mark">→ </span>Book map</td>
+                <td>Book map</td>
                 <td><b>Shift + Down</b></td>
             </tr>
             <tr>
@@ -1147,7 +1148,7 @@ Key improvements and explanations:
         </tr>
     </table>
 
-    </div>
+    </div> -->
 
 
     <!-- ANCHOR poire-z -->
@@ -1155,10 +1156,6 @@ Key improvements and explanations:
     <div class="L1-Chapter-heading"  id="poirez">@ poire-z</div>
 
     ✅ HTTP Inspector
-
-    <hr>
-
-    <p><span class="highlight">Only one heading is new "1. Built-in style tweaks" marked like this below</span></p>
 
 
 <!-- <div class="L2-Sub-heading">Controlling your reader from another device - HTTP Inspector Plugin</div>
@@ -1178,13 +1175,13 @@ Key improvements and explanations:
 
 
 
-
+<!-- 
     <div class="L2-Sub-heading">Style tweaks</div>
 
-    <p>Style tweaks feature of KOReader allows you to modify how your book is rendered by KOReader. If you know CSS, you can jump to the <b>examples</b> heading, otherwise continue reading for a basic introduction. We won't go through a full CSS course here. We just want to show you the basics so when you see a style tweak, you will at least have a rough idea what it does.</p>
+    <p>Style tweaks feature of KOReader allows you to modify how your book is rendered by KOReader. We won't go through a full CSS course here. We just want to show you the basics so when you see a style tweak, you will at least have a rough idea what it does.</p>
     
     <div class="L3-Smaller-heading">What is a style tweak?</div>
-    <p>We can describe an EPUB document as a HTML file + some CSS rules. These CSS rules determine how different parts of the book (headings, bold text, quotes etc.) will be shown on a reader app. When you add <span class="ui">style tweaks</span> to KOReader, you override the rules written by the publisher that is embedded in your book.</p>
+    <p>We can describe an EPUB document as a <b>HTML file + some CSS rules</b>. These CSS rules determine how different parts of the book (headings, bold text, quotes etc.) will be shown on a reader app. With <span class="ui">style tweaks</span>, you can change how your book will be rendered by adding new rules and/or overriding the rules written by the publisher that is embedded in your book.</p>
     
     <p>Let's see this on an example <span class="ui">style tweak</span>:</p>
 
@@ -1269,14 +1266,18 @@ Key improvements and explanations:
 
         <ol>
             <li>This area shows the name and description of the tweak</li>
-            <li>This box shows the CSS code of the tweak. You can tap on this area to copy the code to the clipboard. Then you can use this code in your <span class=ui>Book-specific tweak</span> as explained under the next heading.</li>
+            <li>This box shows the CSS code of the tweak. You can tap on this area to copy the code to the clipboard. Then you can paste and modify this code in your <span class=ui>Book-specific tweak</span> as explained under the next heading.</li>
+
             <li><span class=ui>Show in action list</span> button allows you to toggle this tweak with a gesture or add it to a <span class=ui>Quick Menu</span>. See the heading named <b>"How to use tweaks efficiently"</b> below for more info. </li>
+
             <li><span class=ui>Use on all books</span> button activate this tweak for all your books. A <b>star (★)</b> will appear next to its name in the menu, indicating that this tweak will be applied to all books. You can disable this with the same steps.</li>
         </ol>
 
 
     <div class="L3-Smaller-heading">2. Book-specific tweak</div>
-        <p>As you can guess from its name, this type of tweaks are only active for the book which you created them in. To create tweaks for a book, use the integrated editor which you can find here:</p>
+        <p>As you can guess from its name, this type of tweaks are only active for the book which you created them in. This feature is more useful for testing your tweaks or if you need to fix something on the current book and you know that you won't need it on other books. After creating this type of tweak, if you decide that you will need it on other books too (i.e. from the same publisher), you can convert it to a <span class=ui>user style tweak</span>, which we will explain next.</p>
+
+        <p>To create a <span class=ui>book specific tweak</span>, use the integrated editor which you can find here:</p>
 
         <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_document.svg" style="width:26px;"> / Style tweaks / Book-specific tweak</div>
 
@@ -1368,13 +1369,54 @@ Key improvements and explanations:
     <p>instead of this:</p>
     
     <p><b>H1 { border-top: 2px solid black; }</b></p>
-
+ -->
 
     <!-- ANCHOR hius07 -->
 
     <div class="L1-Chapter-heading" id="hius07">@ hius07</div>
 
-    ✅ skim widget
+
+    <div class="L3-Smaller-heading">Viewing text files</div>
+
+    <p>If you have books in <b>.txt</b> format (which is more common in <b>Chinese</b> and <b>Cyrillic</b> languages), you can try enabling the <span class=ui>Auto-detect TXT files layout</span> feature. In some cases it can improve the rendering and make the text more "book like". When enabled, the rendering engine will use heuristics (text wrapped under some max line length, single or double blank lines marking paragraphs, indentation or centered text considered heading...) to guess how to better render the text and will try to create a <b>table of contents</b>.</p>
+
+    <p>You can enable this feature here (which is visible only if you are reading a .txt file):</p>
+
+    <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_document.svg" style="width:26px;"> / Style / Auto-detect TXT files layout</div>
+
+    <p>Note that this feature might mess up ASCII art drawings and space character based formatting. If your book has these kind of features, it might be better to use the default mode in which, the text file is rendered <b>as is</b> in a monospace font.</p>
+
+
+
+    <div class="L3-Smaller-heading">Automatically synchronizing collections with folders</div>
+
+    <p>After creating your collections and adding books to them, you will probably want to keep them in sync with some folders. For example imagine that you created a <b>Science Fiction</b> collection. And you also have a <b>SF</b> folder in your library where you put your science fiction books. If you want to make the <span class=ui>science fiction collection</span> update itself when you add a new file to this folder, you can do it with <span class=ui>connected folders</span> feature of the collections.</p>
+
+    <p>With this feature you can connect one or more folders to your collection. After that, KOReader will (re)scan the folders to add or remove books from your collections in these conditions:</p>
+
+    <ul>
+        <li>When connecting a folder to a collection</li>
+        <li>When including subfolders of a connected folder</li>
+        <li>When showing the collection</li>
+        <li>On program start</li>
+    </ul>
+
+
+    <p><b>How to connect a folder to your collection:</b></p>
+        
+    <img loading="lazy" src="pictures/collections_connect.png" style="width:50%;">
+
+    <ul>
+        <li>Go to the <span class=ui>Collections</span> screen that is seen in the image above.</li>
+        <li>Long-press on the collection name which you want to connect folders <b>(1)</b>.</li>
+        <li>Select <span class=ui>Connect folders</span> from the pop-up menu <b>(2)</b>.</li>
+        <li><span class=ui>Folder chooser screen</span> will open. Add a folder by pressing the <span class=ui>PLUS icon</span> at the top left corner of that screen</li>
+        <li>Repeat the last item if you want to connect more folders.</li>
+    </ul>
+        
+    <p>Collections with connected folders will have a <span class=ui>folder icon</span> as you can see from the image above <b>(3)</b>.</p>
+
+
 
 <!-- 
     <div class="L2-Sub-heading" id="skimwidget">Skim Widget</div>
@@ -1435,7 +1477,7 @@ Key improvements and explanations:
 
     <hr>
 
-    <div class="L2-Sub-heading">Collections</div>
+    <!-- <div class="L2-Sub-heading">Collections</div>
     <p>KOReader's <span class=ui>Collections</span> feature can help you with arranging your library more efficiently. As a very simple definition, collections are user created lists of your books. For example you can create two collections named <b>Fiction</b> and <b>Non-Fiction</b> to arrange your books accordingly. Of course you can also use folders to do this but using collections gives you more flexibility.</p>
     <p>Some advantages of collections compared to the folder based organization:</p>
     <ul>
@@ -1471,14 +1513,12 @@ Key improvements and explanations:
 
         <div class="L3-Smaller-heading">Adding books to your collections</div>
 
-        <p><span class="highlight">This heading is rewritten to include batch addition + the screenshot</span></p>
-
         <p>There are three different places in KOReader where you can add books to your collections:</p>
 
         <br>
 
         <p><b>1. From the File Browser and History screen</b></p>
-        <p>You can add a book to your collections from the <span class=ui>File browser</span> or <span class=ui>History</span> screen. From the <span class=ui>History</span> screen you can add books <b>one at a time</b>. Long press on the book and choose <span class=ui>Add to collection</span>. Then you can choose which collection(s) you want to add this book to.</p>
+        <p>You can add a book to your collections from the <span class=ui>File browser</span> or <span class=ui>History</span> screen. From the <span class=ui>History</span> screen you can add books <b>one at a time</b>. Long press on the book and choose <span class=ui>Collections...</span>. Then you can choose which collection(s) you want to add this book to.</p>
             
         <p>If you are adding several books, you can do this from the <span class=ui>File browser</span>. For multiple books this is the procedure:
         <ol>
@@ -1505,7 +1545,7 @@ Key improvements and explanations:
 
         <ul>
             <li><span class=ui>Add all books from a folder:</span> As its name says, this options allows you to select a folder to add all the books in it to this collection. Note that this option <b>doesn't add the books in subfolders</b> of the chosen folder. For example if you select your <b>Fiction</b> folder and you have folders named <b>Science Fiction</b> and <b>War Fiction</b> under it, they won't be added with this option.</li>
-            <li><span class=ui>Add all books from a folder and its subfolder:</span> This is the option that will <b>add all the subfolders</b> of your chosen folder. Be careful with this option because it will go down all the way while adding the books. So if you have many levels of nested folders, there might be too many books than you thought.</li>
+            <li><span class=ui>Add all books from a folder and its subfolders:</span> This is the option that will <b>add all the subfolders</b> of your chosen folder. Be careful with this option because it will go down all the way while adding the books. So if you have many levels of nested folders, there might be too many books than you thought.</li>
             <li><span class=ui>Add a book to collection</span>: This is the basic option that will allow you to add a single book.</li>
         </ul>
 
@@ -1515,7 +1555,7 @@ Key improvements and explanations:
 
 <div class="L3-Smaller-heading">Removing books from your collections</div>
 
-        <p>You can remove a book from collections from the <span class=ui>File browser</span>, <span class=ui>History</span> screen or the <span class=ui>Collections</span> screen. In the <span class=ui>File browser</span> and <span class=ui>History</span> screens, long press on the book and choose <span class=ui>Add to collection</span>. You will see a checkmark next to the collections that you added this book to. Uncheck the ones by tapping on it to remove the book from that collection. In the <span class=ui>Collections</span> screen you can long press on the book and choose <span class=ui>Remove from collection</span>.</p>
+        <p>You can remove a book from collections from the <span class=ui>File browser</span>, <span class=ui>History</span> screen or the <span class=ui>Collections</span> screen. In the <span class=ui>File browser</span> and <span class=ui>History</span> screens, long press on the book and choose <span class=ui>Collections...</span>. You will see a checkmark next to the collections that you added this book to. Uncheck the ones by tapping on it to remove the book from that collection. Also from the <span class=ui>Collections</span> screen, you can long press on a book and choose <span class=ui>Remove from collection</span>.</p>
 
 
 
@@ -1523,18 +1563,17 @@ Key improvements and explanations:
 
 <div class="L3-Smaller-heading">Arranging the books in your collections</div>
 
-        <p><span class="highlight">This heading is new which also refers to the new screenshot above</span></p>
-
         <p>Collections can be very crowded but KOReader allows you to find your books easily by providing many filtering options. If you look at the image above, you can see the filtering options in <b>Box 2</b> and <b>Box 3</b>. <b>Box 2</b> allows you to filter by book status (new, reading, finished, on hold) and <b>Box 3</b> allows you to filter by book metadata (author, series, language, keywords). And also you can combine these two groups of filters like this example: <b>"Show me the new books in this collection which are written by Isaac Asimov <span class=ui>(Filter by authors -> Isaac Asimov)</span> that I haven't started yet <span class=ui>(Filter by status -> New)</span>."</b></p>
         
-        <p>You can update the book metadata by long-pressing on the book in <span class=ui>File browser</span> and choosing <span class=ui>Book information</span> from the menu. In the popup window you can long-press on any field to change the metadata like <b>author</b> or <b>keywords</b>. But we suggest you to use <span class=external>Calibre</span> for this task, a third-party application which makes managing your book metadata much easier.</p>
+        <p>You can update the book metadata by long-pressing on the book in <span class=ui>File browser</span> and choosing <span class=ui>Book information</span> from the menu. In the popup window you can long-press on any field to change the metadata like <b>author</b> or <b>keywords</b>. You can also use <span class=external>Calibre</span> for this task, a third-party application which makes managing your book metadata much easier.</p>
+
+        <div class=info><span class="label_blue">INFO</span> Be aware that <span class=external>Calibre</span> changes the metadata within the book itself, so the changed metadata is visible outside of <span class=external>Calibre</span>. But KOReader doesn't change the book file, it only adds custom metadata as a file in the book's <b>.sdr folder</b>, so this metadata is visible in KOReader only.</div>
 
 
 
 
 
 <div class="L3-Smaller-heading">Searching in collections</div>
-<p><span class="highlight">This heading is new</span></p>
 
         <p>There are two types of search you can perform in collections: You can search for a phrase <b>in the book titles and metadata</b> or you can also search <b>inside the book texts</b>. You can open the search dialog from:</p>
 
@@ -1553,12 +1592,11 @@ Key improvements and explanations:
 
     
     <div class="L3-Smaller-heading">Using Collections with Profiles</div>
-    <p><span class="highlight">This heading is new</span></p>
 
     <p>Your collections can be used with the <span class=ui>profiles</span> feature of KOReader. If you don't know about <span class=ui>profiles</span> yet, here is a description from our <a href="#L2-profiles">Profiles</a> section:</p>
 
     <p>
-        A <span class=ui>profile</span> is basically a collection of actions that can be triggered with a single gesture (like a macro).</p>
+        A <span class=ui>profile</span> is basically a set of actions that can be triggered with a single gesture (like a macro).</p>
 
         <p>As an example, imagine that when reading some type of books, you always:</p>
         <ul>
@@ -1578,20 +1616,18 @@ Key improvements and explanations:
             <li>You can add your comic books to a collection, which can trigger a profile to decrease the screen refresh interval to <span class=ui>every page</span> to avoid ghosting.</li>
             <li>You can add your problematic PDFs to a collection, so when you open them <span class=ui>Auto OCR</span> or <span class=ui>Reflow mode</span> is activated with a profile.</li>
         </ul>
-
+ -->
 
         <hr>
 
-    <div class="L3-Smaller-heading" id="L3-profileautoexec">Profile auto-execution</div>
+    <!-- <div class="L3-Smaller-heading" id="L3-profileautoexec">Profile auto-execution</div>
         
-    <p><span class="highlight">This heading is new</span></p>
-
     <p>You can run a profile manually as explained above but real power of profiles can be unleashed with its <span class=ui>auto-execute</span> feature. Using this feature, you can trigger a profile depending on some conditions and sub-conditions:</p>
 
         <table class="grid-table" align="center" style="width: 100%;  margin-left: auto; margin-right: auto; table-layout: fixed; border: none;">
 
         <tr>
-            <td><b>Trigger</b></td><td><b>Sub-options</b></td>
+            <td><b>Trigger</b></td><td><b>Sub-conditions</b></td>
         </tr>
         <tr>
             <td><span class=ui>On KOReader start</span><p>Run this profile every time KOReader starts. Note that this is only possible when KOReader is starting with the <span class=ui>File browser</span> or <span class=ui>Last file</span>.</p></td><td>-</td>
@@ -1611,7 +1647,7 @@ Key improvements and explanations:
             </td>
         </tr>
         <tr>
-            <td><span class=ui>On showing folder</span> <p>Run this profile when you enter this folder in file browser. You can use this trigger to change the display mode of <span class=ui>file browser</span>. For example when you enter a certain folder you can change the display mode from <b>mosaic</b> to <b>detailed</b> view.</p><span class="highlight">I am not sure of this, is my text correct?</span></td>
+            <td><span class=ui>On showing folder</span> <p>Run this profile when you enter this folder in file browser. You can use this trigger to change the display mode of <span class=ui>file browser</span>. For example when you enter a certain folder you can change the display mode from <b>mosaic</b> to <b>detailed</b> view.</p></td>
             <td><ul>
                 <li><span class=ui>If folder path contains</span> a certain text</li>
                 <li><span class=ui>If folder path doesn't contain</span> a certain text</li>
@@ -1620,8 +1656,7 @@ Key improvements and explanations:
         <tr>
             <td><span class=ui>On book opening</span>
                 <p>This trigger is executed when you open a book (optionally) combined with specific sub-conditions.</p>
-                <span class="highlight">Are these sub-conditions AND or OR matching?</span>
-        
+                <p>First 4 sub-conditions are <b>OR</b> matching, so any one of them is enough to trigger the profile execution.</p>
                 </td>
                 <td>
                 <ul>
@@ -1635,8 +1670,8 @@ Key improvements and explanations:
         </tr>
         <tr>
             <td><span class=ui>On book closing</span>
-                <p>This option is same as above but it triggers when you close a book.</p>
-                <span class="highlight">What is this useful for, some synchronizations?</span>
+                <p>This option is same as above but it triggers when you close a book. You can use this for example enabling/disabling reading statistics when you open certain documents to exclude them from your stats.</p>
+                
             </td>
                 <td>
                 <ul>
@@ -1653,7 +1688,7 @@ Key improvements and explanations:
         <br><br>
 
         <p><b>Profile examples:</b></p>
-        <p><span class="highlight">This heading is new</span></p>
+
         <p>Here are some profile examples from our devs to give you ideas about using this powerful feature of KOReader. Examples also include auto-execute conditions and <span class=ui>collections</span> features:</p>
 
         <ul>
@@ -1665,8 +1700,8 @@ Key improvements and explanations:
             <li>Add your problematic PDFs to a collection, so when you open them <span class=ui>Auto OCR</span> or <span class=ui>Reflow mode</span> is activated with a profile.</li>
             <li>Switch display mode (covers, detailed list etc.) of <span class=ui>file browser</span> when you enter certain folders.</li>
             <li>Toggle off reading statistics when opening a book from a <b>Reference Books</b> collection. Toggle statistics back on when closing the book.</li>
-            <li>If you expose the <span class=ui>style tweaks</span> in the gesture manager, you can create a profile to enable or disable them based on certain conditions. So you can trigger a <b>able publisher styles+apply these user style tweaks</b> profile based on book location/collection or by adding a keyword to the metadata of the book for example. See the style tweaks section for more info***</li>
-        </ul>
+            <li>If you expose the <span class=ui>style tweaks</span> in the gesture manager, you can create a profile to enable or disable them based on certain conditions. For example you can trigger a <b>"disable publisher styles AND apply my user style tweaks"</b> profile based on the book's location/collection or by a keyword in the metadata of the book. See the style tweaks section for more info***</li>
+        </ul> -->
 
         <hr>
 
