@@ -1,0 +1,2734 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>User Guide Check 26.05</title>
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<!-- ANCHOR CSS -->
+
+<style>
+
+@media (max-width: 430px) {
+
+img:not(.img_inline) {  /* Target all img tags that DO NOT have the class .inline */
+    width: 100% !important; 
+    height: auto !important; /*  Maintain aspect ratio */
+}
+
+ul {
+    padding-left: 1rem !important;
+
+}
+
+ol {
+    padding-left: 1rem !important;
+}
+
+.warning {
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+}
+
+.info {
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+}
+
+.tip {
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+}
+
+#TocButton {
+    top: auto !important;
+    bottom: 2% !important;
+    left: 3% !important;
+    right: auto !important;
+    font-size: 1rem !important;
+}
+
+#nextHeadingBtn {
+    top: auto !important;
+    bottom: 2% !important;
+    font-size: 1rem !important;
+}
+
+.switch {
+    top: 1% !important;
+    left: auto !important;
+    right: 3% !important;
+    }
+
+}
+
+html{
+    font-size: 100%;
+}
+
+body {
+    font-family: 'geologica', Arial, sans-serif;
+    font-weight: 300;
+    font-synthesis: none;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s;
+    max-width: 100%;
+    overflow-x: hidden; /*  Hide the horizontal scrollbar */
+    counter-reset: my-step-counter;
+}
+
+
+
+/* LIGHT THEME COLORS */
+:root {
+        --bg-color: #FDF6E3;
+        --container-color: #FFFCFD;
+        --text-color: #272112;
+        --bold-color: #000;
+    
+        --red-color: #DC262B;
+        --green-color: #6AAA00;
+        --blue-color: #0083ED;
+        --orange-color: #F59E0B;
+        --link-color: #1D91FD;
+        --internal-link-color: #26A69A;
+        --external-color: #b720d1;
+        --uitag-color: #EEEEEE;
+        --negative-text-color: #FFF;
+        --warning-bg-color: #ffeded;
+        --info-bg-color: #f0fafc;
+        --tip-bg-color: #f3fff1;
+    }
+    
+/* DARK THEME COLORS */
+    body.dark {
+        font-weight: 400;
+        --bg-color: #1a0f02;
+        --container-color: #474546;
+        --text-color: #F8E9C2;
+        --bold-color: #FFF;
+    
+        --red-color: #fa504a;
+        --green-color: #d5ec0c;
+        --blue-color: #4FC3F7;
+        --orange-color: #FFB911;
+        --link-color: #4FC3F7;
+        --internal-link-color: #56d8c9;
+        --external-color: #ff61c5;
+        --uitag-color: #cfcfcf;
+        --negative-text-color: #000;
+        --warning-bg-color: #4e0000;
+        --info-bg-color: #004351;
+        --tip-bg-color: #0a4200;
+    }
+
+
+/* STANDARD TEXT FONT */
+@font-face {
+    font-family: 'geologica';
+    src: url('pictures/Geologica-VariableFont_CRSV\,SHRP\,slnt\,wght.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+/* MONOSPACE FONT */
+@font-face {
+    font-family: 'sourcecodepro';
+    src: url('pictures/SourceCodePro-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 200 900;
+    font-display: swap;
+}
+
+/* ICONS FONT */
+@font-face {
+    font-family: 'microns';
+    src: url('pictures/microns.otf') format('opentype');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
+/* ICONS CLASS */
+.microns {
+    font-family: 'microns';
+    font-size: 1rem;
+}
+
+
+
+.microns_warning {
+    font-family: 'microns';
+    color: var(--red-color);
+    font-size: 1.7rem;
+    padding-right: 0.2rem;
+}
+
+.microns_info {
+    font-family: 'microns';
+    color: var(--blue-color);
+    font-size: 1.7rem;
+    padding-right: 0.2rem;
+}
+
+.microns_tip {
+    font-family: 'microns';
+    color: var(--green-color);
+    font-size: 1.7rem;
+    padding-right: 0.2rem;
+}
+
+
+
+
+
+
+
+/* MAIN DIV */
+.outer-container {
+    max-width: 80ch;
+    margin: 0 auto;
+    background-color: var(--container-color);
+    padding-left: 2.2%;
+    padding-right: 2.2%;
+    padding-bottom: 3%;
+    box-shadow: 0px 4px 6px 0px  var(--text-color);
+    transition: background-color 0.5s;
+    border-radius: 8px;
+}
+
+/* TWO COLUMN DIV - USED INSIDE OUTER*/
+.double-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.centering-div {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
+
+
+
+a {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--link-color);
+    border-bottom: solid 2px var(--link-color);
+}
+
+a:hover {
+	background-color: var(--link-color);
+    color: var(--container-color);
+    border-radius: 2px;
+}
+
+.internalink {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--internal-link-color);
+    border-bottom: solid 2px var(--internal-link-color);
+}
+
+.internalink::after {
+    font-family: microns;
+	content: "";
+	color: var(--internal-link-color);
+    padding-left: 0.3rem;
+}
+
+.internalink:hover {
+	background-color: var(--internal-link-color);
+    color: var(--container-color);
+}
+
+b {
+    font-weight: 500;
+    color: var(--bold-color);
+}
+
+p {
+	line-height: 175%;
+	color: var(--text-color);
+	text-align: justify;
+	text-indent: 1.5rem;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+hr {
+    max-width: 80%;
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, #00000000, var(--red-color), #00000000);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+ul {
+	margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    margin-left: 0rem;
+    padding-left: 0;
+    padding-left: 2.7rem;
+    list-style: disc;
+}
+
+ol {
+	margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    margin-left: 0rem;
+    padding-left: 0;
+    padding-left: 2.9rem;
+}
+
+li {
+	text-indent: 0rem;
+	line-height: 175%;
+	color: var(--text-color);
+	text-align: justify;
+	margin-top: 0.45rem;
+	margin-bottom: 0.45rem;
+    list-style-position: outside;
+}
+
+li::marker {
+	font-weight: bold;
+}
+
+
+/* GENERAL IMAGES */
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.6rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.35);
+    max-width: 100%;
+    border-radius: 8px;
+    background: var(--container-color);
+}
+
+/* Dark mode image dimming */
+.dark img {
+    filter: brightness(0.7) contrast(1.3) sepia(0.2);
+    transition: filter 0.4s ease;
+}
+
+.dark img:hover {
+    filter: none;
+}
+
+/* INLINE IMAGES */
+.img_inline {
+    display: inline;
+    margin-top: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+    background: #FFF;
+    border-radius: 50%;
+}
+
+
+
+.borderless-table {
+    border-collapse: collapse;
+    width: 85%;
+    margin-top: 1rem;
+    margin-left: 0rem;
+}
+.borderless-table td {
+    height: 1.4rem;
+    text-align: center;
+    padding: 0.8rem 0.5rem 0.8rem 0.5rem;
+    border-bottom: 1px dotted var(--text-color);
+
+}
+
+
+.grid-table {
+    border-collapse: collapse;
+    width: 85%;
+    margin-top: 1rem;
+    margin-left: 0rem;
+}
+.grid-table td {
+    height: 1.4rem;
+    text-align: center;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    /* border-bottom: 1px solid var(--text-color); */
+    border: 1px solid var(--text-color);
+}
+
+
+
+/* .L1-Chapter-heading::after {
+    font-family: microns;
+    color: var(--red-color);
+	content: ":";
+    font-weight: 800;
+    padding-right: 0.8rem;
+} */
+
+.L1-Chapter-heading {
+    color: var(--red-color);
+    background-color: var(--bg-color);
+    font-size: 1.7rem;
+	font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 4px;
+    /* border-bottom: 3px solid var(--red-color); */
+
+box-shadow: 2px 2px 4px -1px #818181 inset;
+border-radius: 8px;
+padding: 10px 10px;
+}
+
+/* .L2-Sub-heading::before {
+    font-family: microns;
+    color: var(--red-color);
+	content: "";
+    font-weight: 600;
+    padding-right: 0.6rem;
+} */
+
+.L2-Sub-heading {
+    color: var(--red-color);
+    font-size: 1.3rem;
+    font-weight: 750;
+    letter-spacing: 0.025rem;
+    text-align: center;
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 3px;
+}
+
+/* .L3-Smaller-heading::before {
+    font-family: microns;
+    color: var(--red-color);
+	content: "";
+    font-weight: 600;
+    padding-right: 0.9rem;
+} */
+
+.L3-Smaller-heading {
+    color: var(--red-color);
+    font-weight: 700;
+    font-size:1.1rem;
+    letter-spacing: 0.025rem;
+    text-indent: 1.5rem;
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+
+
+/* MAIN CHAPTER HEADINGS - CENTERED */
+/* .L1-Chapter-heading {
+    font-weight: 400;
+    font-size:1.8rem;
+    line-height: 2.6rem;
+    text-align: center;
+    color: var(--orange-color);
+    background: var(--container-color);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    
+
+
+    box-shadow: 
+        inset 4px 4px 6px #ddd2b9, 
+        inset -5px -5px 6px #ffffff;
+
+    border-radius: 12px;
+    break-before: page;
+} */
+
+/* SUB HEADINGS - CENTERED */
+/* .L2-Sub-heading {
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 2rem;
+    margin-top: 2.4rem;
+    color: var(--orange-color);
+} */
+
+/* SMALL HEADINGS - LEFT ALIGNED */
+/* .L3-Smaller-heading {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--orange-color);
+    margin-top: 2rem;
+} */
+
+/*
+.ui::before {
+font-family: microns;
+  margin-right: 0.3rem;
+      content: '';
+}
+*/
+
+
+/* TIP, NOTE, WARNING BOX LABELS */
+.label_red {
+    font-family: sourcecodepro;
+	font-weight: 700;
+    color: var(--red-color);
+    border: 2px solid  var(--red-color);
+    border-radius:6px;
+    padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+}
+
+.label_blue {
+    font-family: sourcecodepro;
+	font-weight: 700;
+    color: var(--blue-color);
+    border: 2px solid  var(--blue-color);
+    border-radius:6px;
+    padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+}
+
+.label_green {
+    font-family: sourcecodepro;
+	font-weight: 700;
+    color: var(--green-color);
+    border: 2px solid  var(--green-color);
+    border-radius:6px;
+    padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+}
+
+.label_orange {
+    font-family: sourcecodepro;
+	font-weight: 700;
+    color: var(--orange-color);
+    border: 2px solid  var(--orange-color);
+    border-radius:6px;
+    padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+}
+
+
+
+
+
+/* COLORED TEXTS */
+
+/* USER INTERFACE ELEMENTS OF KOREADER - BLUE */
+.oui {
+	font-weight: 600;
+    color: var(--blue-color);
+}
+
+
+
+/* .ui::before {
+font-family: microns;
+	content: "";
+	font-weight: bold;
+    padding-right: 0.3rem;
+    color: #424242;
+
+} */
+
+.ui {
+    font-family: sourcecodepro;
+background-color: var(--uitag-color);
+/* border: 1px solid #999;*/
+  /* border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #888;
+  border-right: 2px solid #888; */
+  box-shadow: 1px 1px 1px 0px #818181;
+border-radius: 3px;
+padding: 2px 6px;
+font-size: 0.9em;
+font-weight: 700;
+color: #474546;
+  margin-right: 2px; /* To account for the drop shadow offset */
+}
+
+/* EXTERNAL LINKS AND SERVICES - PURPLE */
+.external {
+    font-weight: 700;
+    color: var(--external-color);
+}
+
+
+/* MENU PATHS OF ACTIONS - GREEN */
+.menu-breadcrumbs {
+    font-family: sourcecodepro;
+    font-size: 1rem;
+      width: fit-content;
+      max-width: 90%;
+    line-height: 1.6rem;
+    color: var(--green-color);
+    text-align: center;
+    background-color: var(--container-color);
+    /* box-shadow: 0px 2px 5px -2px  var(--text-color) inset; */
+    font-weight: 700;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.2rem 0.3rem 0.4rem 0.3rem;
+    border-top: 2px solid  var(--green-color);
+        border-bottom: 2px solid  var(--green-color);
+}
+
+
+
+.menu-breadcrumbs::before {
+font-family: microns;
+    font-weight: 800;
+	content: "";
+	color: var(--green-color);
+    padding-right: 0.2rem;
+    display: inline-block;
+}
+
+.menu-breadcrumbs + li {
+  margin-top: 2.6rem;
+}
+
+
+
+/* TIP, NOTE, WARNING BOXES */
+.warning {
+    background-color: var(--warning-bg-color);
+	border: 0px solid var(--red-color);
+    border-radius: 12px;
+    box-shadow: 0px 2px 6px -2px inset var(--text-color);
+	color: var(--text-color);
+	line-height: 180%;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 1.2% 1.6% 1% 1.6%;
+	text-align: justify;
+    text-indent: 0em;
+}
+
+.info {
+    background-color: var(--info-bg-color);
+	border: 0px solid var(--blue-color);
+    border-radius: 12px;
+    box-shadow: 0px 2px 6px -2px inset var(--text-color);
+	color: var(--text-color);
+	line-height: 180%;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 1.2% 1.6% 1% 1.6%;
+	text-align: justify;
+    text-indent: 0em;
+}
+
+.tip {
+    background-color: var(--tip-bg-color);
+	border: 0px solid var(--green-color);
+    border-radius: 12px;
+    box-shadow: 0px 2px 6px -2px inset var(--text-color);
+	color: var(--text-color);
+	line-height: 180%;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 1.2% 1.6% 1% 1.6%;
+	text-align: justify;
+    text-indent: 0em;
+}
+
+
+
+
+/* TOC styles*/
+
+.TOC-heading {
+    font-weight: 600;
+    font-size:2rem;
+    line-height: 2rem;
+    text-align: center;
+    color:  var(--orange-color);
+    break-before: page;
+}
+
+.toc {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc a {
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--text-color);
+    border-bottom: none;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.toc a:hover {
+    font-weight: 700;
+    background-color: var(--orange-color);
+    color: var(--container-color);
+    border-bottom: none;
+    box-shadow:  -1px 4px 7px -2px  var(--text-color) inset;
+    border-radius: 6px;
+}
+
+.toc ul {
+    list-style: none;
+    padding-left: 0.8em;
+    margin: 0rem;
+}
+
+/* Styling for 2nd level */
+.toc ul ul {
+    padding-left: 2.6em;
+}
+
+/* Main level square bullet */
+.toc > li > a::before {
+    content: "";
+    display: inline-block;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    background-color: var(--orange-color);
+    width: 1.1rem;
+    height: 1.1rem;
+    transition: background-color 0.5s ease; /* Add transition for smooth color change */
+}
+
+.toc > li > a:hover::before {
+    background-color: var(--container-color);
+}
+
+.toc > li > a {
+    font-weight: 600 !important;
+    color: var(--orange-color);
+    margin-top: 0rem;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    text-align: left;
+}
+
+/* More space after the main section headers */
+.toc > li {
+    margin-top: 0rem;
+    margin-bottom: 1.6rem;
+    line-height: 100%;
+}
+
+/* Adding a little space before a nested list */
+.toc li > ul {
+    margin-left: 1rem;
+    margin-top: 0rem;
+}
+
+/* GO TO THE ToC BUTTON */
+#TocButton {
+    display: none; /* Hidden by default */
+    outline: none;
+    position: fixed;
+    top: 0.5rem;
+    bottom: auto;
+    left: auto;
+    right: 1rem;
+    z-index: 99;
+
+    background-color: var(--red-color);
+    border: 1px solid #FDF6E3;
+    padding: 0.6rem 0.8rem 0.6rem 0.8rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--red-color);
+    
+    font-family: geologica;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-indent: 0em;
+}
+
+#TocButton:hover {
+    text-shadow: 0px 0px 6px #FFFCFD;
+    }
+
+
+
+
+
+/* NEXT HEADING button */
+#nextHeadingBtn {
+    display: none; /* Hidden by default */
+    outline: none;
+    position: fixed;
+    top: 4rem;
+    bottom: auto;
+    right: 1rem;
+    z-index: 99;
+
+    background-color: var(--orange-color);
+    border: 1px solid #FDF6E3;
+    padding: 0.6rem 0.8rem 0.6rem 0.8rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--orange-color);
+    
+    font-family: geologica;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-indent: 0em;
+}
+
+#nextHeadingBtn.show {
+    display: block;
+    opacity: 1;
+}
+
+#nextHeadingBtn:hover {
+    text-shadow: 0px 0px 6px #FFFCFD;
+    }
+
+
+
+
+/* DARK MODE SWITCH */
+.switch {
+    position: absolute;
+    top: 1%;
+    left: 3%;
+    right: auto;
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    z-index: 1000;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Night mode bg color*/
+.switch input:checked + .slider {
+    background-color: var(--container-color);
+}
+
+.switch input:checked + .slider:before {
+    background-color: transparent;
+    border-radius: 50%;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    box-shadow: inset -36px 0px 0 #ffdf2c;
+}
+
+.switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--text-color);
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 34px;
+    width: 34px;
+    left: 5px;
+    bottom: 5px;
+    transition: 0.4s;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 16px;
+    box-shadow: inset -8px -4px 0 #f6eb59;
+}
+
+
+
+/* PROOFREADING MARKERS */
+
+.yellow-mark::before {
+    font-weight: 900;
+	content: counter(question-step-counter);
+    	/* content: "— "  counter(question-step-counter) " · "; */
+	color: #000000;
+    padding: 0.2rem 0.8rem 0.2rem 0.8rem;
+    display: inline-block;
+}
+
+.yellow-mark {
+    text-indent: 0;
+    counter-increment: question-step-counter;
+
+    /* To "skip" a number or change the start value, use counter-reset: my-step-counter 10; to start counting from 10 */
+
+	font-weight: 400;
+    color: #000000;
+    background-color:  #FFE626;
+    box-shadow: 2px 2px 1px -1px #767676;
+    border-radius: 6px;
+    padding: 0.2rem;
+    line-height: 1.7rem;
+}
+
+.green-mark {
+    border-radius: 0.4em 1em 0.6em;
+	padding: 2px 6px;
+	margin: -3px -6px;
+    color: #322814;
+        background-image: linear-gradient(
+    100deg,
+    hsl(93deg 100% 96%) 0%,
+    hsl(82deg 99% 83%) 10%,
+    hsl(80deg 96% 75%) 39%,
+    hsl(80deg 96% 75%) 59%,
+    hsl(82deg 99% 83%) 85%,
+    hsl(93deg 100% 96%) 100%
+);
+}
+
+#progress-bar-container {
+        width: 8px; /* Thickness of the vertical bar */
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+        /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.666);  */
+    }
+
+    #progress-bar {
+    background-image: linear-gradient(to bottom, var(--bg-color) , var(--orange-color));
+    border-radius: 3px;
+}
+
+/* Container for the buttons */
+.theme-buttons {
+    display: flex;
+    gap: 100px;
+    padding: 10px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 30px;
+    
+}
+
+/* Base Button Style */
+.theme-btn {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover Effect */
+.theme-btn:hover {
+    transform: scale(1.1);
+    background: rgba(0,0,0,0.1);
+}
+
+/* Active State (Selected) */
+.theme-btn.active {
+    background: #fff; /* White background for the selected button */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transform: scale(1.1);
+}
+
+#controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column; /* Stack them vertically */
+    gap: 10px;
+    z-index: 1000;
+}
+
+#controls button {
+    font-weight: bold;
+    padding: 5px ;
+    background: var(--text-color) ;
+    color: var(--container-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* The animation */
+@keyframes glow-highlight {
+    0% { outline: 0px solid transparent; }
+    50% { outline: 6px solid var(--red-color); }
+    100% { outline: 0px solid transparent; }
+}
+
+/* The class to apply */
+.flash-me {
+animation: glow-highlight 1s ease-out 4;
+
+}
+
+/* TIP OF THE DAY WIDGET CSS */
+#tip-widget {
+    max-width: 600px;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px -2px var(--text-color);
+    background-color: var(--container-color);
+}
+
+/* Header Styling */
+#tip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    padding-left: 10px;
+    background-color: var(--internal-link-color); /* Primary color */
+    color: var(--negative-text-color);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    cursor: pointer; /* Indicates it's clickable/collapsible */
+}
+
+#tip-header h2 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Tip Counter Styling */
+#tip-counter {
+    font-weight: bold;
+
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 60px;
+    text-align: center;
+}
+
+/* Tip Content Area */
+#tip-content {
+    padding: 0px 10px 5px 10px;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 110px;
+    overflow-y: auto;
+}
+
+/* COLLAPSIBLE STATE */
+.collapsed #tip-content {
+    max-height: 0; /* Hides content */
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+#tip-controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+    background-color: var(--internal-link-color);
+}
+
+.tip-button {
+    flex-grow: 1;
+    margin: 0 3px;
+    padding: 3px 10px; /* Classic blocky padding */
+    border: 2px outset #ffffff; /* Initial raised border (white highlight) */
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    /* Small transition for smooth state changes, but the style is retro */
+    box-shadow: 2px 2px 0 #808080; /* Simple drop shadow for definition */
+    background: linear-gradient(to bottom, #FFFDF5, #E6E1D6);
+}
+			
+    #prev-tip {
+        background-color: var(--bg-color);
+        color: #404040;
+        box-shadow: 1px 1px 1px 0px var(--text-color);
+        border-radius: 5px;
+    }
+    #next-tip {
+        background-color: var(--bg-color);
+        color: #404040;
+        box-shadow: 1px 1px 1px 0px var(--text-color);
+        border-radius: 5px;
+    }
+    #random-tip {
+        background-color: var(--bg-color);
+        color: #404040;
+        box-shadow: 1px 1px 1px 0px var(--text-color);
+    border-radius: 5px;
+    }
+			
+.tip-button:active {
+    /* This is the key to the 3D press effect: */
+    border: 2px inset #ffffff; /* Changes the border from 'outset' (raised) to 'inset' (pressed in) */
+    transform: translate(1px, 1px); /* Moves the button slightly down and right */
+    box-shadow: none; /* Removes the drop shadow when pressed */
+}
+
+
+
+</style>
+</head>
+
+
+
+<body>
+
+
+
+
+
+
+<div class="outer-container">
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const themeSwitcher = document.getElementById('theme-switcher');
+    
+    // Load saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark');
+            themeSwitcher.checked = true;
+        }
+    
+    // // Detect OS preference if no saved preference
+    //     else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    //         document.body.classList.add('dark');
+    //         themeSwitcher.checked = true;
+    //     }
+    
+    // Handle toggle switch
+        themeSwitcher.addEventListener('change', function() {
+            document.body.classList.toggle('dark');
+            localStorage.setItem('theme', this.checked ? 'dark' : 'light');
+        });
+    });
+    </script>
+
+
+    <label class="switch">
+        <input type="checkbox" id="theme-switcher">
+        <span class="slider round"></span>
+    </label>
+
+<br>
+
+<div id="controls">
+    <button id="prev-btn" title="Browse new additions to the guide">⭐<span class=microns></span></button>
+    <button id="next-btn" title="Browse new additions to the guide">⭐<span class=microns></span></button>
+</div>
+
+    <div style="box-shadow: 0px 4px 8px -1px  var(--text-color) inset; padding: 1rem; border-radius: 12px;"> 
+        
+        <div class="L2-Sub-heading">User Guide 26.05 Additions</div>
+        
+    <span class="yellow-mark"> My comments and questions look like this. Please refer to the number at the beginning of these lines when giving feedback/answer. </span>
+
+    <p>Also ignore these emojis ✅ and asterisks (***) in the text. They are temporary markers and will be removed.</p>
+
+
+    <p>You can click on your name to directly go to your section:</p>
+
+
+        <ul>
+            <!-- <li><a href="#mergen3107">mergen3107</a></li>
+            <li><a href="#ryanwwest">ryanwwest</a></li>
+            <li><a href="#commodore64user">Commodore64User</a></li>
+            <li><a href="#poirez">poire-z</a></li> -->
+            <li><a href="#hius07">hius07</a></li>
+            <li><a href="#poirez">poire-z</a></li>
+            <li><a href="#frenzie">Frenzie</a></li>
+
+
+        <p><b>NOTE:</b> There is a new feature at the right bottom corner, two buttons with ⭐ On this page they confusingly jump to all headings but they will actually jump to "new topics added to the guide". (Since all headings are marked as new on this page, they jump to all of them)</p>
+
+        <!-- ANCHOR poire-z -->
+
+
+
+        
+        </ul>
+
+    </div>
+
+    		<div id="tip-widget">
+			<!-- TOP SECTION (Collapsible Header) -->
+			<div id="tip-header">
+				<h2>KOReader Tips</h2><div id="tip-controls">
+				<button class="tip-button" id="prev-tip">Previous</button>
+				<button class="tip-button" id="random-tip">Random</button>
+				<button class="tip-button" id="next-tip">Next</button>
+			</div>
+				<span id="tip-counter">0 / 0</span>
+			</div>
+			<!-- BOTTOM SECTION (Controls) -->
+			
+			<!-- CONTENT SECTION (The actual tip) -->
+			<div id="tip-content">
+				<p id="current-tip-text">Loading tips...</p>
+			</div>
+
+
+		</div>
+
+
+    <!-- ANCHOR hius07 -->
+    <div class="L1-Chapter-heading"  id="hius07">@ hius07</div>
+
+
+<p>✅  To "Saving highlights into PDF"</p>
+
+
+<div class="L3-Smaller-heading" data-jump>Importing highlights from PDF files</div>
+
+<p>KOReader can import highlights from PDF files which are marked with other PDF applications.</p>
+
+<p><span class="yellow-mark">❓ Is there a limitation that we should note here ↑ I made highlights with Okular (a Poppler based reader) and KOReader imported the highlights correctly. So I guess any PDF reader that is capable of highlighting works.</span></p>
+
+<p>To import the highlights: </p>
+
+<ol>
+    <li>Open your PDF file with KOReader</li>
+
+    <li>Open the <span class=ui>Bookmarks</span> dialog from here:
+        <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_bookmark.svg" style="width:26px;"> / Bookmarks</div>
+    </li>
+
+    <li>Press the <span class=ui style="font-family: microns;"></span> button at the top-left corner.</li>
+
+    <li>On the opened dialog, choose <span class=ui>Import embedded annotations</span>. Your highlights will be added to the <span class=ui>Bookmarks</span> list.</li>
+</ol>
+
+<p>After the import process, highlights in the PDF will turn into regular KOReader highlights. Which means, you can:</p>
+
+<ul>
+    <li>Add notes to them</li>
+    <li>Change their style and color</li>
+    <li>Delete them <b>(See the note below)</b></li>
+    <li>Export them in various formats</li>
+</ul>
+
+    <p><b>How deletion works:</b> When you import highlights, KOReader doesn't modify the original highlights in your PDF. It adds imported highlights as a layer on top of the originals. So if you delete an imported highlight, only this <b>added layer</b> is deleted. Your original highlights are not deleted from the PDF file. You can open this PDF with another reader and still see the original highlights.</p>
+
+<hr>
+
+
+
+
+<p>✅  To "Status bar"</p>
+
+<div class="L3-Smaller-heading" data-jump>Using "dynamic filler" item for status bar alignment</div>
+
+    <p>KOReader's status bar has a special item called <span class=ui>dynamic filler</span>. When you add this invisible item to your status bar, it will expand to fill the available space like an inflated balloon, pushing other items on both sides as you can see in the image below (<b>dynamic filler</b> is visualized as a blue rectangle):</p>
+
+    <img loading="lazy" src="pictures/statusbar_dynamic_filler.png" style="width: 80%;">
+    
+    <p>You can insert it between other items to create two groups like in the image, or you can add it as the first/last item. You can enable and move this item like the other status bar items from the same menu.</p>
+
+    <p>You can also combine this item with the <span class=ui>custom text</span> item explained below to adjust your layout further.</p>
+
+<hr>
+
+    <p>You can use this item in combination with the <span class=ui>dynamic filler</span> item explained above to adjust your layout further.</p>
+
+
+
+    <hr>
+
+<p>✅ To "Status bar"</p>
+
+
+    <div class="L3-Smaller-heading" data-jump>Status bar presets</div>
+
+    <p>KOReader allows you to have more than one status bar layout and switch between them. Using this feature, you can have different layouts for cases like these examples:</p>
+
+    <ul>
+        <li>A layout showing more items when using wider landscape orientation</li>
+        <li>A layout with the <b>chapter name</b> item when reading specific books</li>
+        <li>A layout with <b>memory usage</b> item when reading large comics to keep an eye on your memory</li>
+    </ul>
+
+    <p>To create a preset, first adjust your status bar to your liking by adding and ordering items (as explained before in this section). Then select:</p>
+
+    <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/gear.svg" style="width:26px;"> / Status bar / Status bar presets / Create new preset from current settings</div>
+
+
+    <p>This will create a preset with your current status bar layout. Repeat this for other layouts that you want to create. After this, you can switch between your new layouts from the same menu.</p>
+
+<span class="yellow-mark"> ❓ Can they switch presets with gestures/profiles/QM or only from this menu?</span>
+
+
+<hr>
+
+<p>✅ To "Status bar"</p>
+
+
+    <div class="L3-Smaller-heading" data-jump>Changing the status bar font</div>
+
+    <p>You can change the font of status bar items from here:</p>
+
+    <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/gear.svg" style="width:26px;"> / Status bar / Configure items / Item font</div>
+
+    <p>You can use all your installed fonts for the status bar. If you want to fit lots of information, we can suggest <b>DINish Condensed</b> font, which you can download from its <a href="https://github.com/playbeing/dinish">project page</a> and install using the same procedure which you can find here***: <a href="#L2-fonts" class="internalink">Using your own fonts</a></p>
+
+<hr>
+
+<p>✅ To "Status bar"</p>
+
+    <div class="L3-Smaller-heading" data-jump>External content item</div>
+
+    <p><span class=ui>External content</span> is a special status bar item that allows KOReader plugins to show content in the status bar. For example if you are using the <span class=ui>Read Timer</span> plugin and want to see the timer in the status bar, you should enable the <span class=ui>external content</span> item in the status bar from here:</p>
+
+    <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/gear.svg" style="width:26px;"> / Status bar / Status bar items / External content</div>
+
+<hr>
+
+<p>✅ To "Status bar"</p>
+
+<div class=tip><span class=microns_tip title="Useful tip"></span> If you are showing <span class=ui>progress bar</span> and the <span class=ui>status bar items</span> on the same line, you will notice that the progress bar's width changes slightly depending on other items' sizes. If you find this disturbing, you have the option to make the progress bar width fixed, by enabling the <span class=ui>Lock width at minimum</span> option from its menu:
+
+    <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/gear.svg" style="width:26px;"> / Status bar / Progress bar / Lock width at minimum</div>
+
+</div>
+
+
+
+<hr>
+
+<p>✅ TO Profiles</p>
+
+
+<div class="L3-Smaller-heading" data-jump>Adding profiles as menu items to a Quick Menu</div>
+
+<p>In addition to adding actions to your <b>quick menu</b>, you can also add your <b>profiles</b> as a menu item. This way, you can execute many actions at once with this single menu item.</p>
+
+<p>We assume that you have a working <b>quick menu</b> and a <b>profile</b>, which you want to add to this menu. With these ready, follow these instructions:</p>
+
+ <ol>
+    <li>Go to the <span class=ui>Settings</span> of the profile that you want to use as the "menu item" and enable <span class=ui>Show in action list</span>. This will make your profile visible in the <span class=ui>Gesture manager</span>.</li>
+
+    <li>Now you can add this profile to your <span class=ui>quick menu</span> as a regular action from the <span class=ui>Gesture Manager</span>. You can find this profile at the last page of <span class=ui>General</span> sub-menu of <span class=ui>Gesture manager</span>.</li>
+</ol>
+
+<p>After adding your profile as a menu item, you can open your quick menu and  tap on this item to execute all the actions in tes profile. You can also add a profile as a sub-menu which allows you to have a nested menu. This method is explained in the next heading.</p>
+
+<hr>
+
+<p>✅ To Profiles</p>
+
+<div class="L3-Smaller-heading" data-jump>Execute profile actions one by one</div>
+
+<p>Normally when you execute a profile, <b>all of the actions</b> in the profile are executed following the order that you have chosen in the <span class=ui>Arrange actions</span> menu.</p>
+
+<p>But you also have the option to execute them <b>one by one</b>. Which means, each time you invoke this profile, <b>only one of the actions (next one)</b> will be executed instead of all of them.</p>
+
+<p>Here is a useful example:</p>
+
+
+
+<ol>
+    <li>Create a profile with these actions
+    <ul>
+    <li>Go to pinned page</li>
+    <li>Go back to previous location</li>
+    </ul></li>
+
+    <li>Assign it to an easy gesture like <span class=ui>Tap bottom right corner</span></li>
+
+    <li>Enable <span class=ui>Execute one by one</span> option from the profile's <span class=ui>Edit actions</span> menu</li>
+</ol>
+
+<p>Now each time you tap the right corner, you will switch between your <b>pinned page</b> and your reading position. This can be useful for quickly jumping to <b>references section</b> and going back, for example.</p>
+
+<hr>
+
+<p>✅ TO Quick Menu</p>
+
+<div class="L3-Smaller-heading" data-jump>Creating nested quick menus</div>
+
+<p>You can also add a <b>quick menu</b> as a menu item to another <b>quick menu</b>. This will give you a nested menu structure. This is useful when you have many quick menus but you don't want to assign different gestures to each one.</p>
+
+ <ol>
+    <li>Go to the <span class=ui>Settings</span> of the profile that you want to use as the "menu item" and enable <span class=ui>Show in action list</span>. This will make your profile visible in the <span class=ui>Gesture manager</span>.</li>
+
+    <li>Then enter the <span class=ui>Edit actions</span> menu in the same <span class=ui>Settings</span> of the profile. Now enable the <span class=ui>Show as QuickMenu</span> option which is on the second page. This will tell KOReader to treat this profile as another menu which you can enter, instead of executing all its actions when you tap on it.</li>
+
+    <li>Now you can add this profile to your main <span class=ui>quick menu</span> as you can do with the other actions from the <span class=ui>Gesture manager</span>. You can find your profile under the <span class=ui>General</span> tab, last page.</li>
+</ol>
+
+
+
+<div class="L2-Sub-heading" id="L2-profileautoexec">Profile auto-execution</div>
+
+<p>✅ REPLACE "Profile auto-execution" table</p>
+
+<span class="yellow-mark">You can have a quick look at the "Trigger" column here hius07, "Sub-conditions" column should be ok, since I wrote them directly from the menu.</span>
+
+    <p>You can run a profile manually as explained above but real power of profiles can be unleashed with its <span class=ui>auto-execute</span> feature. Using this feature, you can trigger a profile depending on some conditions and sub-conditions:</p>
+
+    <table class="grid-table" style="width: 100%;  margin-left: auto; margin-right: auto; table-layout: fixed; border: none;">
+
+    <tr>
+        <td><b style="color: var(--red-color);">Trigger</b></td><td><b style="color: var(--red-color);">Sub-conditions</b></td>
+    </tr>
+    <tr>
+        <td><span class=ui>On KOReader start</span><p>Run this profile every time KOReader starts. Note that this is only possible when KOReader is starting with the <span class=ui>File browser</span> or <span class=ui>Last file</span>.</p></td><td>-</td>
+    </tr>
+
+    <tr>
+        <td><span class=ui>On wake-up</span> <p>Run this profile every time device wakes up</p></td><td>-</td>
+    </tr>
+    
+    <tr>
+        <td><span class=ui>On exiting sleep screen</span> <p>Run this profile every time device exits the sleep screen</p></td><td>-</td>
+    </tr>
+
+    <tr>
+        <td><span class=ui>On read timer expiry</span> <p>Run this profile every time the read timer finishes</p></td><td>-</td>
+    </tr>
+
+    <tr>
+        <td><span class=ui>On rotation</span> <p>Run this profile when screen rotates to the selected rotation(s).</p>  <p><b>Examples:</b> Change to double column layout when device rotates to landscape. Activate night mode when device rotates upside down.</p></td>
+        <td>
+        <ul>
+        <li><span class=ui>Left 90°</span> (landscape)</li>
+        <li><span class=ui>0°</span> (normal)</li>
+        <li><span class=ui>Right 90°</span> (landscape)</li>
+        <li><span class=ui>180°</span> (upside down)</li>
+        </ul>
+        </td>
+    </tr>
+
+    <tr>
+        <td><span class=ui>On showing folder</span> <p>Run this profile when you enter this folder in file browser. You can use this trigger to change the display mode of <span class=ui>file browser</span>. For example when you enter a certain folder you can change the display mode from <b>mosaic</b> to <b>detailed</b> view.</p></td>
+        <td><ul>
+            <li><span class=ui>If folder path contains</span> a certain text</li>
+            <li><span class=ui>If folder path does not contain</span> a certain text</li>
+            <li><span class=ui>If folder path is equal</span> to a certain folder</li>
+            <li><span class=ui>If folder path is not equal</span> to a certain folder</li>
+        </ul></td>
+    </tr>
+
+    <tr>
+        <td><span class=ui>On book opening</span>
+            <p>This trigger is executed when you open a book (optionally) combined with specific sub-conditions.</p>
+            <p>First 4 sub-conditions are <b>OR</b> matching, so any one of them is enough to trigger the profile execution.</p>
+            </td>
+            <td>
+            <ul>
+                <li>Combined with <b>device orientation</b></li>
+                <li>Combined with <b>book metadata</b></li>
+                <li>Combined with <b>book file path</b></li>
+                <li>Combined with <b>collections book is included in</b></li>
+                <li>Combined with <b>book is being opened for the first time</b></li>
+            </ul>
+            </td>
+    </tr>
+
+    <tr>
+        <td><span class=ui>On book closing</span>
+            <p>This option is same as above but it triggers when you close a book. You can use this for example enabling/disabling reading statistics when you open certain documents to exclude them from your stats.</p>
+            
+        </td>
+            <td>
+            <ul>
+                <li>Combined with <b>device orientation</b></li>
+                <li>Combined with <b>book metadata</b></li>
+                <li>Combined with <b>book file path</b></li>
+                <li>Combined with <b>collections book is included in</b></li>
+                <li>Combined with <b>book is being opened for the first time</b></li>
+            </ul>
+            </td>
+    </tr>
+
+    <tr>
+        <td><span class=ui>Only within time interval</span>
+            <p>This option is <b>not a trigger but a limiter</b>. You can use this option to define a time interval for the execution of profile. For example "make the font bigger when I open a book from a certain collection <b>but only if it is evening time</b>".</p>
+            
+        </td>
+            <td>-</td>
+    </tr>
+
+    </table>
+	
+<hr>
+
+
+<p>✅</p>
+
+<div class="L3-Smaller-heading" data-jump>Profile troubleshooting</div>
+
+    <p>Profiles are auto-executed with a tiny delay to avoid interference with other operations/events of KOReader. But in some cases like <b>closing a document</b>, profile has to be executed instantly to be able to perform its actions.</p>
+
+    <p>You can enable this instant execution option from:</p>
+
+        <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_tools.svg" style="width:26px;"> / Profiles / "Your profile name" / Auto-execute / Execute promptly</div>
+
+        <p>When you enable this option, for example on a profile with the trigger <span class=ui>on book closing</span>, your profile will be executed <b>before</b> the document is closed. This running order is necessary for proper execution in this case.</p>
+
+        <p>Whenever you enable <span class=ui>Auto-execute</span> for a profile, we suggest enabling this <span class=ui>Execute promptly</span> option too. If you observe that your profile is not working correctly, then you can try disabling this option.</p>
+
+    <div class=warning><span class=microns_warning  title="Warning"></span> This setting may also cause (unknown) issues, because the number of action combinations in a profile is almost infinite and we don't know how they might interact. This is why it doesn't come enabled by <b>default</b>.</div>
+
+
+<hr>
+<p>✅ TO PLUGINS/USER PATCHES</p>
+
+<div class=tip><span class=microns_tip title="Useful tip"></span> <span class=external>Deepwiki</span> is an AI powered service which creates architectural overviews and flow diagrams from <span class=external>GitHub</span> repositories. You can access the created documentation for KOReader <a href="https://deepwiki.com/koreader/koreader">here</a>. Please note that, this documentation <b>is not</b> created by KOReader developers, but our devs rate it as useful. This can be a good starting point for understanding how KOReader's code is organized, if you want to contribute to the project.</div>
+
+
+
+    <!-- ANCHOR poire-z -->
+
+<div class="L1-Chapter-heading"  id="poirez">@ poire-z</div>
+
+
+
+
+
+<p>✅ To "HTTP inspector" and "TIPS"</p>
+<div class="L3-Smaller-heading" data-jump>KOReader Page Turner Companion</div>
+
+<p>This is an Android application that allows you to control your KOReader from an Android OS device on the same network. It uses the <span class=ui>KOReader HTTP Inspector</span> plugin to communicate with KOReader. You can remotely perform many actions like turning pages, entering text, adjusting screen light, activating profiles.</p>
+
+<p>You can see the instructions and download the app from its project page: <a href="https://github.com/TomasDiLeo/koreader_pageturner_companion">KOReader Page Turner Companion</a></p>
+
+
+<hr>
+
+<p>✅</p>
+
+
+<p>To see what you can control remotely using the <b>HTTP Inspector</b> plugin:
+</p>
+
+<ol>
+    <li>Start <span class=ui>HTTP Inspector server</span> on your device:
+        <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_tools.svg" style="width:26px;"> / More tools / KOReader HTTP Inspector / Start HTTP server</div>
+    </li>
+
+    <li>Open this page <b>http://your-ereader-IP:8080/koreader/event</b> on a device that is connected to the same network as your e-reader </li>
+</ol>
+
+<p>Your list will populate depending on the installed plugins and user patches.</p>
+
+
+
+
+<div class="L1-Chapter-heading" id="" data-jump>PAGE NUMBERING IN KOREADER</div>
+
+<p>✅ NEW SECTION</p>
+
+
+    <p>The page numbers in the <span class=ui>status bar</span> behave differently depending on the document type; some are fixed, while others adjust dynamically. In the image below, you see an overview of the page numbering system of KOReader. You can come back to this chart while reading this section. As you can see, documents that KOReader is able to open, can be divided into two categories:</p>
+
+    <span class="yellow-mark">I can modify this chart if it doesn't reflect what you have in mind, poire-z</span>
+
+    <img loading="lazy" src="pictures/page_numbers.png" style="width: 65%;">
+
+
+    <div class="L2-Sub-heading">1. Fixed-Layout Documents</div>
+
+    
+
+
+    <p><b>PDF, DjVu and CBR/CBZ</b> are examples of this type of documents. Also known as <b>non-reflowable</b>, these documents has a static layout. This means, every element on the page (text and image) is precisely positioned and their position never changes, whether you are reading it on a small screen or big. The design that you see, is always an exact replica of a printed page.</p>
+
+    <p>Fixed-layout documents have only <span class=ui>static page numbers</span>. When you open these type of documents in KOReader, page numbers that you see in the status bar, belong to the document itself. <span class=ui>Static page numbers</span> <b>don't change</b> with the type or screen size of the reader device.</p>
+
+    <br>
+
+    <div class="L2-Sub-heading">2. Reflowable Documents</div>
+
+    <p><b>EPUB, MOBI, AZW, HTML</b> are examples of this type of documents. The layout of these documents is not fixed. This means, the text and other content can adapt (reflow) to fit the size of the screen or window that you are viewing the document in.</p>
+
+    <p>You can imagine these type of documents as very long text files or web pages, which naturally don't have page breaks. When you open these documents, KOReader calculates the page numbers on the first opening by dividing this long document into <b>screen sized</b> pages. As a result of this, if you open a document on a 10-inch reader, your book will have less pages than a 6-inch reader because more words can fit on a single page of bigger screen (more words per page = less pages in total).</p>
+
+    <p>This also means that if you change the appearance of the text, for example by making the font bigger, this will change your page numbers. Because with a bigger font size, less text will fit on the screen, increasing the total number of pages.</p>
+
+
+
+    <div class="L3-Smaller-heading">Stable page numbers</div>
+
+    <p>Due to their changing nature, <b>reflowable document page numbers</b> are not very useful for referencing. When you open a <b>PDF</b> file (which is a fixed-layout document) on your e-reader and on your computer at the same time, page 42 will always show the same content on both devices. But for an <b>EPUB</b> file, page 42 on one device will be different from the other.</p>
+
+    <p>So now you might ask: <b>"Is it possible to have non-changing page numbers on a reflowable document like EPUB?"</b> Yes it is possible with the <span class=ui>stable page numbers</span> feature. There are two types of <span class=ui>stable page numbers</span> in KOReader:</p>
+
+<br>
+
+    <p><b>1. Reference page numbers:</b></p>
+
+    <p>KOReader supports documents with <b>reference page numbers</b> feature, which allows publishers to embed page numbers from printed books directly to the e-book version. When you enable this feature, KOReader doesn't calculate the page numbers itself. Instead, it shows you the <b>embedded</b> page numbers from the publisher. This means, the page number you see in your <span class="ui">status bar</span> matches the print version of the book. </p>
+    
+    <p>You can enable this feature from:</p>
+    
+    <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_bookmark.svg" style="width:22px;"> / Settings  / Stable page numbers / Use stable page numbers</div>
+    
+    <p>If you also check the <span class="ui">Show stable page numbers in margin</span> option from the same menu, these publisher page numbers will be shown next to the text in a small font.</p>
+    
+    <br>    <br>
+
+    <p><b>2. Synthetic page numbers:</b></p>
+
+    <p>What if your book doesn't have <b>reference page numbers</b> (majority of them don't) but you still need stable page numbers?</p>
+        
+    <p>Well, you can enable the <span class=ui>synthetic page numbers</span> feature of KOReader. When you use this feature, KOReader calculates the page numbers according to a defined number of <span class=ui>characters per page</span> (instead of your screen size). So, for example you can set KOReader to "count <b>1500 characters</b> as a single page" (default value of this setting which roughly equals to 250 words).</p>
+
+    <p>~250 words is the single page of a standard <b>mass market paperback/PA5 format</b> book. So when you enable this feature, your page count will be similar to a real book printed at the mentioned size. Of course you can change this <span class=ui>characters per page</span> setting from the menu to simulate different book sizes.</p>
+
+    <p>If you have the printed version of a book, you can adjust the <span class=ui>characters per page</span> number to match the <b>total page numbers</b> to the printed book so it would be easier to find a passage in the other version.</p>
+
+
+    <div class="L3-Smaller-heading">Changes after enabling the stable page numbers feature</div>
+
+    <p>When you enable <b>stable page numbers</b> for a document, these changes happen:</p>
+
+    <ul>
+        <li>Your status bar switches to <b>stable page numbers</b> for the read/remaining/total page counts.</li>
+
+        <li><span class=ui>File browser</span> shows <b>stable page numbers</b> for this document for the <b>total page count</b>.</li>
+
+        <li><span class=ui>Page browser</span> shows <b>stable page numbers.</b></li>
+
+        <li>If you export your highlights from this document, export file will have the <b>stable page numbers</b> for the highlight and note locations.</li>
+    </ul>
+
+    <span class="yellow-mark">❓ Anything else in addition to these? ↑</span>
+
+    <hr>
+
+
+    <div class="L3-Smaller-heading">Technical details and troubleshooting <span class=microns_warning title="Advanced topic"></span></div>
+
+<p>✅ Merge with "Using your own fonts" heading</p>
+
+<p>    <span class="yellow-mark">This heading needs technical checking since I combined it from your answers to two very old discussions, poire-z.</span></p>
+
+    <p>If you are having problems with the font weights, this section can help you to understand how KOReader's font processing works.</p>
+
+    <ol>
+        <li>When starting up, KOReader compiles the available fonts by reading their embedded <b>font metadata/info</b> and classifies them according to family and weights. KOReader tries to determine the <b>font family information</b> from the metadata included in the font, so <b>font names are not important</b> when copying to your device.</li>
+
+        <li>If you have more than one font file for a font family, KOReader will try to fit fonts in one of these 4 categories: <b>Regular, Bold, Italic & BoldItalic</b>. An ideal case looks like this:
+            <ul>
+                <li>Luciole-Regular.ttf mapped to <span class=ui>Font weight: 0</span> (Regular 400)</li>
+                <li>Luciole-Bold.ttf  mapped to <span class=ui>Font weight: +3</span> (Bold 700)</li>
+                <li>Luciole-Regular-Italic.ttf</li>
+                <li>Luciole-Bold-Italic.ttf</li>
+            </ul>
+            If a font variation is not available, as well as for fractional adjustments, it will be synthesized from the nearest available weight.
+        </li>
+
+        <li>If your font provides only one file, KOReader will assign it as (Regular 400) <span class=ui>Font weight: 0</span> and synthesize all other weights and variants itself. In other words KOReader will fake italic and bold for this font.</li>
+    </ol>
+
+
+        <p><span class=microns_info></span> If you long-press on the <span class=ui>Font weight</span> label in the bottom menu, it will tell you which weight classes your current font provides.</p>
+
+    <p><span class=microns_warning></span> If your font also has other variants, things can get confusing. Let's say you copied a font family to your device. And upon startup, KOReader has read these variants of the font: <b>Light, Thin, Normal, Medium, ExtraBlack, SemiBold, Bold, Black</b> in this order. You would expect to see <b>Normal</b> variant to be used as the document's normal font (because it is named as <b>Normal</b>) but KOReader will use the <b>Light</b> variant because that is the first font in the list that doesn't have the <b>bold flag</b>. And it will ignore the <b>Thin, Normal</b> and <b>Medium</b> variants because it has already found a "not bold" font for the document.</p>
+        
+    <p>And again according to this list, <b>ExtraBlack</b> will be used as the bold font because it is the first font in the list with the <b>bold flag</b>. And KOReader will ignore the <b>SemiBold, Bold, Black</b> variants, because KOReader has already found the "bold" it is looking for.</p>
+
+    <p>As a summary of the above: We copied the whole family and expected <b>Normal</b> and <b>Bold</b> variants to be chosen but instead, KOReader used <b>Light</b> and <b>ExtraBlack</b> variants. This happened because the order of the fonts that are fed to KOReader is not under our control so "first come is first served".</p>
+
+    <p>Solution is, transferring only the font files that you want to be used, like this:</p>
+
+    <ul>
+        <li>Keep only one of <b>Thin, Extra Light, Light, Normal, Medium</b>: It will be used as the <b>regular font</b>.</li>
+        <li>Keep only one of <b>Semi Bold, Bold, Extra Bold, Black, Extra Black</b>: It will be used as the <b>bold font</b>.</li>
+        <li>You can also add italic variants of the same weight (i.e. medium/medium-italic).</li>
+    </ul>
+
+
+
+    <!-- ANCHOR @mergen3107 -->
+    <!-- <div class="L1-Chapter-heading"  id="mergen3107">@ mergen3107</div> -->
+
+<section id="frenzie">
+
+    <!-- ANCHOR Frenzie -->
+    <div class="L1-Chapter-heading">@ Frenzie</div>
+
+    <span class="yellow-mark">Frenzie, your part is mostly just checking if the sentences are clear enough. I made notes if also technical checking is necessary.</span>
+
+    
+    <div class="L2-Sub-heading" data-jump>Adding new fonts</div>
+    <p>✅ Merge with "Using your own fonts" heading</p>
+
+        <span class="yellow-mark">Technical checking is needed for this heading</span>
+
+<p>You can add your own fonts to KOReader and use them as the <b>document font</b>, <b>status bar font</b> and even as the <b>user interface font</b> (with a user patch).</p>
+
+<p>KOReader supports these common font formats:</p>
+
+<ul>
+    <li>TrueType - <b>.ttf</b> extension</li>
+    <li>OpenType - <b>.otf</b> extension</li>
+    <li>Web Open Font Format - <b>.woff</b> and <b>.woff2</b> extension</li>
+</ul>
+<span class="yellow-mark">❓ Wiki mentions also .pfa/.pfb which is apparently an ancient PostScript font format. Should we mention it here ↑ ?</span>
+
+<p>Font files with these extensions can be directly copied to the <span class=ui>/koreader/fonts/</span> folder on your device. Depending on your device, this copying procedure might differ. For example:</p>
+
+<ul>
+    <li>On <b>Kobo</b> devices complete path is <span class=ui>/mnt/onboard/.adds/koreader/fonts</span></li>
+    <li>On <b>PocketBook</b> devices, make a directory for each font in <span class=ui>/applications/koreader/fonts/</span> directory and copy your font there.</li>
+    <li>On <b>Android OS</b> based devices, KOReader looks at the <span class=ui>Internal storage/Fonts</span> directory and load fonts from there <span class="yellow-mark">❓ This is my observation but wiki page says "copy fonts to /koreader/fonts/" on Android. Did I find some undocumented feature?</span></li>
+
+    <li>On <b>Desktop</b> version, you can copy your fonts to the location that you can see from the menu item shown below: <span class=ui>Open fonts folder</span>. Also if you turn on the <span class=ui>Enable system fonts</span> option from the same menu, KOReader can access all the fonts that are available to your operating system:
+    
+    <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_document.svg" style="width:22px;"> / Font / Font settings / Open fonts folder</div>
+    
+    </li>
+</ul>
+
+
+        <p>KOReader supports sub-directories for the <span class=ui>Fonts</span> directory, so you can copy font families as directories under this. After copying your fonts to the mentioned directories, restart KOReader. New fonts should appear at the beginning of the font list:</p>
+
+    <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_document.svg" style="width:22px;"> / Font</div>
+
+
+    
+    <div class="L2-Sub-heading" data-jump>Marking pages for navigation</div>
+    
+    <p>✅ TO "MOVING THROUGH YOUR BOOK"</p>
+
+<p>After learning how to navigate, we will now learn <b>how to mark pages</b> in a document. This will allow us to quickly jump between different parts of our document.</p>
+
+<div class="L3-Smaller-heading"> Pinned page <img class="img_inline" src="pictures/pin.svg" style="width:26px;"></div>
+
+<p>If there is a page in a document that you frequently jump to (for example <b>Reference pages</b> section of a book), you can pin this page to easily jump there. You can have only <b>one pinned page per book</b>, so if you need more places to jump, check the <span class=ui>Bookmarks</span> feature below.</p>
+
+
+<p><b>How to pin/unpin a page:</b></p>
+
+
+<ol>
+    <li>Open the <span class=ui>Skim widget</span>.</li>
+    <li>Press the <span class=ui>page number</span> in the <span class=ui>Skim widget</span>.</li>
+    <li>A dialog will open and you will see the <span class=ui>Pin current page</span> button there. Press normally <b>to pin</b> the page or long-press <b>to remove the pin.</b></li>
+</ol>
+
+<p><b>How to jump to your pinned page:</b></p>
+
+<ol>
+    <li>Open the <span class=ui>Skim widget</span>.</li>
+    <li>Press the <span class=ui>page number</span> in the <span class=ui>Skim widget</span>.</li>
+    <li>Press the <span class=ui>Go to pinned page</span> button in the opening dialog.</li>
+</ol>
+
+<p>Pinning/jumping is much faster if you assign <a href="#L1-gestures" class="internalink">gestures</a> to these actions. For example you can assign <b>"Long-press on bottom left corner"</b> to the <span class=ui>Pin current page</span> action. And <b>"Long-press on bottom right corner"</b> to the <span class=ui>Go to pinned page</span> action. You can also add these actions to your <a href="#L1-qmandprofiles" class="internalink">quick menu</a>.</p>
+
+<p>After jumping to the pinned page, you can return to your previous reading position with this menu action:</p>
+
+    <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_bookmark.svg" style="width:26px;"> / Go back to previous location</div>
+
+<p>Also you can use the <span class=ui>swipe left then right</span> single finger swipe to go back. And of course you can add this action to your <span class=ui>quick menu</span> too.</p>
+
+<div class="L3-Smaller-heading">Bookmarks <img class="img_inline" src="pictures/bookmark.svg" style="width:26px;"></div>
+
+
+***add a link to this heading to other bookmarks heading
+<p>You can add (and remove) a bookmark by tapping the <span class=ui>top right corner</span> of a page. This is the equivalent of <b>folding the corner of the page</b> on a printed book and shows a similar icon at the corner when you add a bookmark.</p>
+
+<p>You can access your bookmarks from the <span class=ui>Bookmarks</span> window and then tap on the bookmarks to jump to the relevant page:</p>
+
+    <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_bookmark.svg" style="width:26px;"> / Bookmarks</div>
+
+<p>You can open this window quickly by <span class=ui>swipe left with double finger</span> gesture or <span class=ui>up then left</span> single finger swipe.</p>
+
+
+
+
+<hr>
+
+<p>✅ TO LIBRARY MANAGEMENT</p>
+
+<div class="L2-Sub-heading" data-jump>Using OPDS catalogs to access digital libraries</div>
+
+<p>An <b>OPDS (Open Publication Distribution System) catalog</b> is an online feed that acts like a digital library index. KOReader has OPDS support so you can browse these digital libraries, search for books on them and download the books directly to your device.</p>
+
+<p>KOReader comes pre-configured with some large OPDS catalogs like <a href="https://www.gutenberg.org/">Project Gutenberg</a> and <a href="https://standardebooks.org/">Standard Ebooks</a> and you can add other OPDS catalogs. To open the OPDS dialog, go to:</p>
+
+    <div class="menu-breadcrumbs">(FILE BROWSER) TOP MENU / <img class="img_inline" src="pictures/top_search.svg" style="width:26px;"> / OPDS catalog</div>
+
+<br>
+
+<p><b>Using personal OPDS servers</b></p>
+<p>In addition to the public catalogs, you can use OPDS system to manage your own library. Using the <span class=external>Calibre</span> application, you can serve the books on your computer as an OPDS catalog, which you can browse directly from KOReader. Click <a href="https://manual.calibre-ebook.com/generated/en/calibre-server.html">here</a> for <span class=external>Calibre</span> instructions about configuring an OPDS server.
+
+<p>If you are using the <span class=external>Kavita</span> self-hosted server for library management, you can access its OPDS documentation for KOReader <a href="https://wiki.kavitareader.com/guides/3rdparty/koreader/">here</a>.</p>
+
+<p>After setting up your own OPDS servers, you need to add them to KOReader. Instructions are <a href="https://github.com/koreader/koreader/wiki/OPDS-support">here</a>.</p>
+
+
+
+<hr>
+<p>✅ TO LIBRARY MANAGEMENT</p>
+
+<p><span class=external>Kavita</span> is an open-source and feature rich, cross platform reading server. You can setup your own server and share your reading collection with your friends and family. It also has <b>OPDS</b> and <b>progress sync</b> support for KOReader. Using this application, you can access your library from your reader device and synchronize reading positions between different devices to continue reading where you have left. Project's page is <a href="https://www.kavitareader.com/">here</a>.</p>
+
+<p>Documentation for <b>OPDS</b> and <b>progress sync</b> for KOReader users is <a href="https://wiki.kavitareader.com/guides/3rdparty/koreader/">here</a>.</p>
+
+
+
+<hr>
+
+
+<div class="L2-Sub-heading" data-jump>Synchronizing your reading progress</div>
+
+<p>✅ New section</p>
+
+<span class="yellow-mark">Technical check of this sync section would be useful</span>
+
+    <p>If you are using KOReader on several devices like e-reader, phone, tablet or desktop computer, KOReader can synchronize your reading progress between them. Using the <span class=ui>progress sync</span> feature, you can continue reading seamlessly when switching from your e-reader at home to your phone on the commute for example.</p>
+
+    <p>This feature is handled by the <span class=ui>progress sync</span> plugin. Setting up synchronization involves these three steps which we will explain below:</p>
+
+    <ol>
+        <li>Create a <b>sync account</b></li>
+        <li>Login to your <b>sync account</b> from all the devices you want to synchronize</li>
+        <li>Automatically or manually synchronize your reading progress</li>
+    </ol>
+    
+
+<div class="L3-Smaller-heading">1. Creating a sync account</div>
+
+    <p>To create a sync account, connect to a network on your device and open the <span class=ui>progress sync</span> plugin in KOReader:</p>
+
+        <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_tools.svg" style="width:26px;"> / Progress sync</div>
+
+    <p>and press the <span class=ui>Register/Login</span> button.</p>
+
+    <p>In the opening window, enter a <span class=ui>username</span> and <span class=ui>password</span> then press the <span class=ui>Register</span> button. This will create an account on <span class=external>KOReader sync server</span> which will hold your reading progress.</p>
+
+
+
+    <div class="L3-Smaller-heading">2. Login to your sync account</div>
+
+    <p>Open the same menu on the devices that you want to sync. Enter your <span class=ui>username</span> and <span class=ui>password</span> and this time press the <span class=ui>Login</span> button. After this, your devices will be connected to your sync account.</p>
+
+    <p>You can give recognizable names to your devices. Again from the same menu, press the <span class=ui>Device hostname</span> and enter a name for the current device.</p>
+
+
+<div class="L3-Smaller-heading">3. Sync your progress</div>
+
+    <p>After everything is set up, you can synchronize your reading progress automatically or manually:</p>
+
+    <ul>
+        <li><b>Automatic sync:</b> To synchronize <b>automatically</b>, enable the <span class=ui>Automatically keep documents in sync</span> menu item. Now whenever you <b>close a book</b> or <b>suspend/resume your device</b>, KOReader will send your reading progress to the server (of course this requires an available network connection).</li>
+
+        <li><b>Manual sync:</b> If you don't have constant internet connection on your device for battery or availability reasons, you can choose to synchronize <b>manually</b>. You have many options to trigger a synchronization:
+
+        <ol>
+            <li><b>From the menu:</b> In the <span class=ui>Progress sync</span> plugin's menu you can press the <span class=ui>Push progress from this device now</span> menu item to send your progress on the current device to the server. To receive the latest progress from the server, press <span class=ui>Pull progress from other devices now</span> menu item.</li>
+
+            <li><b>With gestures:</b> These actions (push/pull progress) are available in the <span class=ui>Gesture manager</span> so you can assign them to any gesture you like.</li>
+
+            <li><b>With quick menu:</b> You can add these actions to your <span class=ui>Quick Menu</span>.</li>
+
+            <li><b>From profiles:</b> You can add these actions to your <span class=ui>Profiles</span>. Especially with the auto-execute feature of <span class=ui>profiles</span>, you can trigger sync with various filters and conditions.</li>
+        </ol>
+    </li>
+    </ul>
+
+    <div class="L3-Smaller-heading">Document matching method options</div>
+
+    <p>In order to sync the progress of a document on two different devices, KOReader first has to identify these two files as "same". Sometimes this can be tricky, so we have two methods that you can choose from, depending on your usage of KOReader. You can change the  method from the <span class=ui>Document matching method</span> option in the <b>progress sync</b> menu.</p>
+
+    <br>
+    <p><b>Binary matching (default)</b></p>
+    <p>By default, <b>progress sync</b> uses <span class=ui>Binary matching</span> method to identify the files. In this method, KOReader generates a partial <b>MD5 hash</b> of the file’s content (which looks like this: 0b229176d4e8db7f...). Any tiny change to the file, completely changes this hash so <b>binary matching</b> method works only if both files are perfectly identical.</p>
+    
+    <p>If you are copying the <b>exact same file</b> manually to all your devices, this method should work. But for example if you are using <span class=external>Calibre</span> to send books to your devices, <b>binary matching</b> will fail.</p>
+    
+    <p>Because <span class=external>Calibre</span> writes its own information like <b>viewer progress</b> directly into the file, which changes the <b>file hash calculation</b>, so KOReader will treat these files (original and <span class=external>Calibre</span> modified) as two different books. If you have this problem you can use the alternative method explained below.</p>
+        
+    <br>
+    <p><b>Filename matching</b></p>
+
+    <p>This is a "looser" matching method designed for users whose files might vary slightly between devices due to the changes made to the documents by other software like <span class=external>Calibre</span>, as explained above.</p>
+
+    <p>In this method, KOReader only checks if the <b>filenames (including the extension) of the two documents</b> are identical to match them. So if you are using <span class=external>Calibre</span> or some other library management software to manage your library across different devices, you can change to <span class=ui>Filename matching</span>.</p>
+
+
+    <div class=info><span class=microns_info title="Contextual information"></span> You can also have a look at the <a href="#L2-metadatastorage" class="internalink">Book metadata storage options</a> section of the guide for in-depth information.</div>
+
+
+    <div class="L3-Smaller-heading">Privacy and security of the synchronization process</div>
+
+    <ul>
+        <li><span class=external>KOReader sync server</span>, the software that handles KOReader's synchronization process is an open-source project. You can find more information including the source code on its <a href="https://github.com/koreader/koreader-sync-server">GitHub page</a>.
+        </li>
+
+        <li>Synchronization server <b>does not store file name or content</b>. This means, the server can't know what you are reading. When you synchronize the progress of a document, only this information is transferred and kept on the server:
+
+            <ol>
+                <li>User name (that you have chosen)</li>
+                <li>Unique id of the document (MD5 hash of the file which looks like this: 0b229176...)</li>
+                <li>Furthest reading position for this document</li>
+            </ol>
+        </li>
+
+        <li>Your password <b>is not stored</b> on the server (only a MD5 hash is kept).</li>
+
+        <li>All communication between KOReader and the sync server is secured with HTTPS.</li>
+        
+    </ul>
+
+    <div class=info><span class=microns_info title="Contextual information"></span> Also you can host your own <span class=external>KOReader sync server</span> on a computer or server that you own and use this for synchronization. Instructions are on the project page linked above.</div>
+
+
+    <p></p>
+
+    ***change other references in the guide to this
+
+    <hr>
+
+
+<div class="L2-Sub-heading">✅ TO "Plugins"</div>
+
+        <ul>
+            <li> <a href="https://github.com/marinov752/emailtokoreader.koplugin"  data-jump>Email to KOReader plugin:</a> This plugin is similar to the <b>Send to Kindle</b> feature. After configuring the plugin, you can send EPUB files to your <b>Gmail</b> address as attachments and the plugin will download them to your device. Detailed instructions are in the linked GitHub page of the plugin.</li>
+            
+            <li> <a href="https://github.com/zeeyado/koassistant.koplugin" data-jump>KOAssistant plugin:</a> A very powerful and customizable AI plugin. You can translate/explain text, compare books/articles etc. by creating custom actions with additional contexts and instructions. Supports local models running on your computer via <b>Ollama</b> compatibility. Very detailed instructions are in the linked GitHub page of the plugin.</li>
+
+            <li> <a href="https://github.com/JoeBumm/Koreader-Menu-customizer" data-jump>Menu disabler plugin:</a> With this plugin, you can make the KOReader interface less cluttered by hiding the menu items that you don't use.</li>
+        
+        </ul>
+
+
+<div class="L2-Sub-heading">✅ TO "Changing fonts"</div>
+
+
+<div class=tip  data-jump><span class=microns_tip title="Useful tip"></span> If you want to change the font of KOReader user interface (menus and dialogs), you can do it with a <span class=ui>user patch</span>. Instructions are here: <a href="https://github.com/koreader/koreader/issues/14846">User interface font changer patch</a> </div>
+
+<div class="L2-Sub-heading">TO "Troubleshooting"</div>
+
+<div class="L3-Smaller-heading" data-jump>✅ My document with .txt extension is very slow</div>
+
+<p>KOReader has a very efficient text processing engine. It can open a 1000 page book in 2 seconds on a 2021 era e-book reader. <span class="yellow-mark"> ❓ Is this correct →</span> Also books are cached on first opening so KOReader can open them faster next time.</p>
+
+<p>Real problem with large text files is the delay when modifying the text appearance. For example, online Chinese novels are known to reach tens of millions of words and generally saved as text files. If you try to change the font size of a <b>.txt</b> book this big, you might see a big delay after each adjustment because all of the book has to be rendered again. KOReader has a <b>partial rendering</b> system which aims to shorten this delay considerably. But this feature can't be used with the text files because these files are not divided into chapters (you can read more about <b>partial rendering</b> <a href="#L2-indicators" class="internalink">here</a>).</p>
+
+<p>To benefit from <b>partial rendering</b> speed-up, you can convert your large text file to <b>EPUB</b> format using the <span class=external>Calibre</span> application. <span class=external>Calibre</span> will automatically divide your text file into smaller individual files during conversion and pack them into an <b>EPUB</b> file. After the conversion, you can change your book appearance much faster. You can download <span class=external>Calibre</span> from this <a href="https://calibre-ebook.com/">page</a> and find tutorials for the <b>TXT-to-EPUB conversion</b> procedure online.</p>
+
+
+
+
+<div class="L3-Smaller-heading" data-jump>✅ Completely removing/resetting KOReader on Android devices</div>
+
+<span class="yellow-mark"> Please also technical-check this heading Frenzie</span>
+
+<p>On Android OS devices, KOReader keeps its settings under the <span class=ui>Internal Storage/koreader/</span> directory. This is an intentional behavior which is different from other Android applications. This location allows you to backup and synchronize your KOReader settings easily by saving them under this user-accessible directory.</p>
+
+<p>But when you uninstall KOReader or clear its data from the <b>Android OS Settings</b> menu, this KOReader settings directory <b>is not removed</b>. So if you uninstall KOReader and then install it again, it will start with your old settings.</p>
+
+<p>If you want to completely reset KOReader to its factory defaults, you should delete this directory manually. When you start KOReader after deleting this directory, it will be automatically re-created with the <b>default settings</b>.</p>
+
+<div class="L3-Smaller-heading" data-jump>✅ Is it possible to disable ads on "special offer" Amazon Kindle devices?</div>
+
+<p>Technically <b>yes</b>, but practically <b>no</b>. KOReader avoids changing the <b>default screensaver behavior</b> on these readers because this might trigger a negative reaction from Amazon, which might lock down the Kindle ecosystem (no more KOReader for Kindles) or even endanger the whole project (no more KOReader). For further info, you can check this discussion with our developers <a href="https://github.com/koreader/koreader/issues/14098">here</a>. Our stance is in line with the <b>MobileRead</b> forums' stance which you can read <a href="https://www.mobileread.com/forums/showthread.php?t=200942">here</a>.</p>
+
+
+<hr>
+
+<p>✅ To TIPS</p>
+
+<div class="L3-Smaller-heading" data-jump>Creating a sleep screen wallpaper from documents and images</div>
+
+
+<p>You can create a sleep screen wallpaper from any document or image using the screenshot feature of KOReader. There are two gestures depending on where you are:</p>
+
+<ol>
+    <li>The default screenshot gesture <span class=ui>long-diagonal swipe</span> if you are in <b>reader mode</b> and <b>file browser</b></li>
+    
+    <li>The alternative screenshot gesture <span class=ui>two-finger large diagonal tap on corners</span> if you are in the <b>image viewer</b></li>
+</ol>
+
+<p>In <b>image viewer</b>, you can zoom and pan the image before taking the screenshot, so it will be cropped to exact size and aspect ratio of your device without stretching.</p>
+
+<hr>
+
+<p>✅ To UI tips</p>
+
+<ul>
+    <li>When viewing <span class=ui>dictionary</span> and <span class=ui>wikipedia</span> results, you can long-press on word(s) in these windows to search them further in the dictionary/wikipedia. This will open another window with the result, so you won't lose your previous search.</li>
+
+    <li>If you have opened several search windows as described in the previous tip, you can close them <b>all at once</b> by long-pressing the close <span class=ui>X</span> button.</li>
+</ul>
+
+<hr>
+
+<p>✅ To File Browser</p>
+
+<div class="L3-Smaller-heading" data-jump>Showing hidden files and directories in File Browser</div>
+<p>Normally, KOReader <b>file browser</b> doesn't show these two groups of files and directories:</p>
+
+<ol>
+    <li><b>Hidden files and directories:</b> These are files and directories that start with a dot "." character, like <span class=ui>.screensavers</span>. If you want to see these directories and files, enable this option:
+
+        <div class="menu-breadcrumbs">(FILE BROWSER) TOP MENU / <img class="img_inline" src="pictures/top_cabinet.svg" style="width:26px;"> / Settings / Show hidden files</div>
+
+    </li>
+
+    <li><b>Unsupported file types:</b> These are the file types that KOReader can't open directly, like font files with a <b>.ttf</b> extension. KOReader can directly open PDF, EPUB, DJVU, MOBI, CBR, CBZ, CBT, DOCX, RTF, HTML, HTMLZ, TXT, XPS, FB2, PDB, CHM and MD document types, image files and ZIP archives, so these files are visible in <span class=ui>file browser</span>. If you want to see the unsupported file types too, you can enable this option:</li>
+        <div class="menu-breadcrumbs">(FILE BROWSER) TOP MENU / <img class="img_inline" src="pictures/top_cabinet.svg" style="width:26px;"> / Settings / Show unsupported files</div>
+
+</ol>
+
+<span class="yellow-mark"> ❓ We still don't support .RAR files directly despite the newly added .CBR support, right?</span>
+
+
+<hr>
+
+<p>✅ TO "Highlighting"</p>
+
+<div class="L3-Smaller-heading" data-jump>What you can do with your highlight?</div>
+
+<p>After highlighting a part of your document, you can tap on the highlight to see the <span class=ui>highlight menu</span>. From this highlight menu, you can reach another extended menu by tapping on the <span class=ui>... (three dots)</span> button as shown below:</p>
+
+
+
+<img loading="lazy" src="pictures/highlight_extended_menu.png" style="width: 60%;">
+
+<p>Using this extended menu you can:</p>
+<ul>
+    <li><span class=ui>Extend</span> your highlight to include more text</li>
+    <li><span class=ui>Copy</span> the text to clipboard to paste elsewhere</li>
+    <li><span class=ui>Search</span> the text on Wikipedia</li>
+    <li><span class=ui>Look up</span> the text in an installed dictionary</li>
+    <li><span class=ui>Translate</span> the text using the <span class=external>Google Translate</span>
+        service</li>
+    <li><span class=ui>View HTML</span> source of the highlighted section, which is useful when writing a <span class=ui>style tweak</span></li>
+    <li><span class=ui>Generate QR code</span> which includes the highlighted text, to scan from another device with a camera and a QR-code reader application</li>
+    <li><span class=ui>Search</span> for the text in the book</li>
+</ul>
+
+
+<hr>
+
+
+<p>✅ TO "Highlighting"</p>
+
+<div class=tip data-jump><span class=microns_tip title="Useful tip"></span> <span class=ui>Long-press on corner gesture</span> can cause problem when you want to long-press on text near the corners. We have special <span class=ui>gesture manager actions</span> that allows you to <b>toggle</b> or <b>temporarily disable</b> corner long-press gestures. You can assign these actions to a gesture or use them in your <span class=ui>quick menu</span>. You can find them here:
+<div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/gear.svg" style="width:26px;"> / Gesture manager / your_chosen_gesture / Device / Toggle┆Ignore long-press on corners</div>
+</div>
+
+
+
+<hr>
+
+
+<p>✅ To Gestures</p>
+
+<p>You can see an overview of currently defined gestures here:</p>
+    <div class="menu-breadcrumbs" data-jump>TOP MENU / <img class="img_inline" src="pictures/gear.svg" style="width:26px;"> / Taps and gestures / Gesture overview</div>
+
+<hr>
+
+<p>✅ TO "Bottom Menu Items"</p>
+
+<div class="L3-Smaller-heading" data-jump>Font hinting</div>
+
+    <p><span class=ui>Font hinting</span> is a typographical technique that adjusts the characters in a font to fit in a low-resolution grid, like an e-ink screen. When enabled, the result is sharper and easier to read characters, at the cost of slight distortion of the original font design.</p>
+        
+    <p>Difference of <b>font hinting</b> is more visible on <b>standard-resolution screens</b> or at <b>smaller font sizes</b>. On a very high-resolution screen, the difference is much less noticeable because the pixels are small enough.</p>    
+        
+    <p>Here is a more detailed comparison:</p>
+        
+        <table align="center" style="width: 100%;  margin-left: auto; margin-right: auto; table-layout: fixed; border: none;">
+            <tr>
+            <td style="vertical-align: top;"><p style="text-indent: 0rem; text-align: center;"><span class="ui">Hinting OFF</span>
+                <ul>
+                    <li>KOReader shows the font's true mathematical shape, without forcing it to snap to the pixel grid.</li>
+                </ul>
+            </td>
+            
+            <td style="vertical-align: top;"><p style="text-indent: 0rem; text-align: center;"><span class="ui">Hinting ON</span></p>
+                <ul>
+                    <li>The font is modified to fit the pixel grid of your screen. Letter shapes may differ slightly from the original font.</li>
+                </ul>
+            </td>
+        </tr>
+        
+        <tr>
+            <td style="vertical-align: top;"><p style="text-indent: 0rem; text-align: center;">
+                <ul>
+                    <li>The font may appear slightly <b>softer, blurrier, or have some unevenness</b> (e.g., the two vertical lines in an 'M' might look like they have different thicknesses).</li>
+                </ul>
+            </td>
+            
+            <td style="vertical-align: top;"><p style="text-indent: 0rem; text-align: center;"></p>
+                <ul>
+                    <li>The font appears <b>sharper, crisper, and more solid</b>. The letters have consistent stroke weights.</li>
+                </ul>
+            </td>
+            </tr>
+
+
+        </table>
+
+
+        
+    <p>In KOReader, <b>font hinting</b> is enabled by default and uses the <b>FreeType library</b>'s hinting algorithm. But it can also use the font designer's instructions embedded in the font files. <span class="yellow-mark"> ❓ Why Auto is default, because font internal instructions missing/broken generally?</span> You can try other settings to see which mode looks better:</p>
+
+        <ol>
+            <li><span class=ui>Off</span> Hinting is disabled</li>
+            <li><span class=ui>Native</span> KOReader uses the font's internal hinting instructions</li>
+            <li><span class=ui>Auto</span> <b>(on by default)</b> KOReader uses FreeType's hinting algorithm, ignoring font's internal hinting</li>
+        </ol>
+
+
+
+
+
+<div class="L1-Chapter-heading" data-jump>Reading improvements for KOReader</div>
+<p>✅ New section</p>
+
+<p>In this section we will first explain two KOreader plugins that might improve your reading speed. Then we will list some fonts that can improve your reading speed and comprehension.</p>
+
+<div class="L2-Sub-heading">KOReader plugins for faster reading</div>
+
+
+<div class="L3-Smaller-heading">1. Perception Expander plugin</div>
+
+
+<p>When you enable, this plugin adds two vertical lines to the reading area, near the left and right edges as you can see in the image below. These lines serve as the start/end markers for your eyes, when reading a line from your book. Working principle of this plugin is based on the fact that, you don't really need to look at the first and last words of a line directly, because with some practice you can perceive them with your peripheral vision.</p>
+
+<img loading="lazy" src="pictures/perception_expander.png" style="width:80%;">
+
+<ul>
+    <li><b>Vertical gray lines:</b> Perception expander indicators</li>
+    <li><b>Red line:</b> Your eyes following the text normally</li>
+    <li><b>Blue line:</b> Your eyes jumping between the indicators (shorter distance)</li>
+</ul>
+
+<p>To use this plugin, you have to first enable it by going to:</p>
+
+    <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_tools.svg" style="width:26px;"> / More tools / Plugin management / Perception expander</div>
+
+<p>After enabling the plugin, you will have a new menu item here:</p>
+
+    <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_document.svg" style="width:26px;"> / Speed reading module - perception expander</div>
+
+<p>You can toggle the <b>expander lines</b> from this menu and also configure the indicators according to your liking and peripheral vision skill level. You can watch the <b>Tim Ferriss</b> video that inspired this plugin <a href="https://youtu.be/jeOHqI9SqOI">here</a>.</p>
+
+
+
+<div class="L3-Smaller-heading">2. FastReader Plugin</div>
+
+
+<p>This plugin is a <b>RSVP (Rapid Serial Visual Presentation)</b> reader. This technique is based on flashing the word(s) at the center of the screen quickly. Your eyes don't need to move when reading like this so the reading speed can be faster. And if you improve the skill, you can perceive more than one word at once, which further increases the reading speed.</p>
+
+<p>To use this plugin, you have to first enable it by going to:</p>
+
+    <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_tools.svg" style="width:26px;"> / More tools / Plugin management / FastReader</div>
+
+<p>After enabling the plugin, you will have a new menu item here:</p>
+
+    <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_tools.svg" style="width:26px;"> / More tools / FastReader</div>
+
+<p>You can start the plugin from this menu and also configure the settings like:</p>
+
+<ul>
+    <li><span class=ui>RSVP speed</span> - Flashing speed in WPM (words per minute)</li>
+    <li><span class=ui>Preview words</span> - How many words to show at once</li>
+</ul>
+
+<p>You can start using the plugin in <b>single word</b> and <b>low WPM (slower)</b> mode and increase them as you get better.</p>
+
+
+<div class="L2-Sub-heading">Fonts for better comprehension/faster reading</div>
+
+    <p>In this section we will suggest some fonts that might improve your reading experience. These fonts are not an exclusive feature of KOReader, but we are including them here because sometimes our users ask about them in our issues and discussions.</p>
+
+    <p>You can install these fonts like any other font. We explain the procedure <a href="#L2-fonts"  class="internalink">here***</a> if you don't know how to add fonts to your device.</p>
+    
+    
+        <p>Overview of fonts in this section:</p>
+
+        <img loading="lazy" src="pictures/legible_fonts.png" style="width: 80%;">
+    
+
+    <p><b>Atkinson Hyperlegible</b></p>
+    <p>Designed by Braille Institute, this font family aims to improve legibility and readability for individuals with low vision. It has clear, highly distinctive letters and numbers. You can see the font and download it from <a href="https://www.brailleinstitute.org/freefont/">here</a></p>
+
+    <br>
+    <p><b>B612</b></p>
+    <p>B612 is a highly legible font family, designed to be used on Airbus aircraft cockpit screens. Its legible design makes it particularly suitable for degraded contexts and aims reducing visual fatigue and cognitive load. These design principles makes it a suitable font for e-readers too. You can see the font and download it from <a href="https://fonts.google.com/specimen/B612">Google Fonts</a></p>
+    
+    
+    <br>
+    <p><b>Lexend</b></p>
+    <p>This font's design is based on the principles derived from educational studies that aim to improve reading performance of students. You can read about the font  <a href="https://www.lexend.com/">here</a> and download it from <a href="https://fonts.google.com/specimen/Lexend">Google Fonts</a></p>
+
+    <br>
+    <p><b>Luciole</b></p>
+    <p>This font adheres to a dozen specific design criteria to provide the best possible reading experience for the visually impaired. It emphasizes the "inner" space of letters and has extremely clear, distinct numbers and mathematical symbols. You can see the font and download it from <a href="https://luciole-vision.com/en/index.html">here</a></p>
+    
+    <br>
+    <p><b>Open Dyslexic</b></p>
+    <p>This font is designed to increase readability for readers with dyslexia. Letters have heavy weighted bottoms to emphasize direction. The unique shapes of each letter can prevent confusion through flipping and swapping. You can download it from <a href="https://forge.hackers.town/antijingoist/opendyslexic">here</a></p>
+
+    <br>
+    <p><b>Fast Font</b></p>
+    <p>This is a special font that substitutes the first few letters of a word with their bold variant (number of letters is calculated according to the word length). <b>Th</b>is <b>bo</b>ld <b>let</b>ters <b>th</b>en <b>a</b>ct <b>a</b>s <b>arti</b>ficial <b>fix</b>ation <b>po</b>ints <b>f</b>or <b>t</b>he <b>e</b>ye <b>t</b>o <b>ju</b>mp <b>o</b>n <b>a</b>s <b>y</b>ou <b>c</b>an <b>s</b>ee <b>i</b>n <b>th</b>is <b>sen</b>tence. In theory this might increase the reading speed but of course personal results may vary. Interestingly, readers with ADHD generally report benefits.</p>
+
+    <p>This font depends on special OpenType features which are supported by KOReader. So you can just download the font, copy it to your device and use it like any other font. You can see the examples and download this font and its variations (serif, monospace and dotted) from its <a href="https://github.com/Born2Root/Fast-Font">GitHub repo</a></p>
+
+
+<hr>
+
+<p>✅ To font suggestions</p>
+<div class="L3-Smaller-heading">Special fonts for small capital letters</div>
+
+<p>KOReader engine can’t create fake small capital letters if a font lacks them and renders this type of text in lowercase. <b>WP Fonts</b> project aims to modify fonts to add small capital letters for using in KOReader. You can see the detailed instructions and download the fonts from the project page: <a href="https://github.com/Chairzard/WP-Fonts">WP Fonts</a></p>
+
+
+
+<div class="L1-Chapter-heading" data-jump>Formatting your e-book like a printed book</div>
+<p>✅ NEW SECTION</p>
+
+<span class="yellow-mark">This section will come just after the "user interface" section so it is intentionally simplified as an introductory chapter.</span>
+
+
+<p>After learning the basics of KOReader from the previous section, now you want to start reading, right? Before that, lets customize the appearance of your book to make it look even nicer.</p>
+
+<p>In this section, we will do a step-by-step "digital typesetting" to make your e-book look more like a printed book. Aim of this tutorial is to get you familiar with the KOReader's <b>text appearance settings</b> so you can change them according to your taste later.</p>
+
+<p>Here are the steps:</p>
+
+<ol>
+    <li><b>Get a nice font:</b> First we need a font for our book which looks more like a printed book (and at the same time readable on an e-ink screen). If you have a favorite font, you can use that. Otherwise you can download one of our suggestions below. We have two fonts for different looks: <b>serif</b> and <b>sans-serif</b> (if you don't know what these mean, just click on the links to see the difference):
+    
+    <ul>
+        <li>If you like <b>serif</b> fonts, download <b>Lusitana</b>. This is an elegant classical serif typeface that is designed for reading long texts. You can download it from <a href="https://fonts.google.com/specimen/Lusitana">here</a>.</li>
+    
+        <li>If you like <b>sans-serif</b> fonts, download <b>Red Hat Text</b>. This is a geometric sans typeface that prioritizes legibility. You can download it from <a href="https://fonts.google.com/specimen/Red+Hat+Text">here</a>.</li>
+    </ul>
+
+    </li>
+
+    <li><b>Transfer the font to your device:</b> If you don't know how, check this part of the guide and come back here after copying the font to your device:***. You should restart KOReader after transferring the font so it can add the font to the <span class=ui>font list</span>.</li>
+
+    <li><b>Set your new font:</b> Open your book and go to the menu you see below. Your newly added font should appear at the beginning of the font list. Select it:</li>
+    
+        <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_document.svg" style="width:26px;"> / Font</div>
+    
+    
+
+    <li><b>Disable <span class=ui>Embedded Fonts</span>:</b> Now we have to disable this option by setting it to <span class=ui>off</span> so KOReader will use our selected font instead of the one included in the book. If the setting is <b>grayed out</b> so you can't change the setting, this means that there are no fonts embedded in this book so you can skip to the next step:</li>
+
+        <div class="menu-breadcrumbs">BOTTOM MENU / <img class="img_inline" src="pictures/gear.svg" style="width:26px;"> / Embedded fonts</div>
+    
+
+    <li><b>Adjust <span class=ui>Font size</span>:</b> Now we will adjust our font size. For <b>Lusitana</b> <span class=ui>22.0</span> is a nice size. For <b>Red Hat Text</b> you can go down to <span class=ui>20.0</span>. However, this is a personal preference, so you can set it to whatever looks best to you. Set the font size here:</li>
+
+        <div class="menu-breadcrumbs">BOTTOM MENU / <img class="img_inline" src="pictures/bottom_font.svg" style="width:26px;"> / Font size</div>
+
+    
+
+    <li><b>Adjust <span class=ui>Font weight</span>:</b> If you are using KOReader on an e-ink device, your text will look <b>less black</b> compared to the LCD/OLED screens. Generally fonts are not designed specifically for e-ink screens so we will fix this by making it darker with the <span class=ui>Font weight</span> setting. <span class=ui>+1</span> is a good starting point. Some thin fonts might require <span class=ui>+2</span>. You can set it more precisely by tapping the <span class=ui>three dots</span> at the end of the setting line:</li>
+
+            <div class="menu-breadcrumbs">BOTTOM MENU / <img class="img_inline" src="pictures/bottom_contrast.svg" style="width:26px;"> / Font weight</div>
+
+    <li><b>Adjust <span class=ui>Line spacing</span>:</b> Now we will adjust the <span class=ui>Line spacing</span> which determines the space between lines vertically. This setting varies between fonts depending on the character geometries. For <b>Lusitana</b> you can set it to <span class=ui>135 %</span>. <b>Red Hat Text</b> with its more open characters, can afford a tighter <span class=ui>120 %</span>. Set it here:</li>
+
+        <div class="menu-breadcrumbs">BOTTOM MENU / <img class="img_inline" src="pictures/bottom_document.svg" style="width:26px;"> / Line Spacing</div>
+
+
+
+
+    <li><b>Adjust <span class=ui>Margins</span>:</b>
+        At this point our text should look pretty nice. Now we will adjust the <span class=ui>margins</span> (empty white space around our text) as the last touch and finish our adjustments. Now open this menu and adjust the settings as you see below:
+    
+            <div class="menu-breadcrumbs">BOTTOM MENU / <img class="img_inline" src="pictures/bottom_crop.svg" style="width:26px;"></div>
+
+        <ul>
+            <li><span class=ui>L/R Margins</span>: Set to <span class=ui>level 7</span></li>
+
+            <li><span class=ui>Top Margin</span>: Set to <span class=ui>level 6</span></li>
+
+            <li><span class=ui>Bottom Margin</span>: Set to <span class=ui>level 6</span></li>
+        </ul>
+    
+    </li>
+
+</ol>
+
+<p>After all these settings, your book should look more like a printed book. You can make further adjustments to any of these settings as you wish now.</p>
+
+<div class="L2-Sub-heading">How to keep these settings for other books?</div>
+
+
+<p>So after all these settings, you might ask <b>"Will my other books look like this too?"</b> No, not automatically. Because all these changes are <b>valid only for the current book</b>. When you open another book, it will look like how we started, before all these changes.</p>
+
+<p>This is an intentional behavior of KOReader and it works like this:</p>
+
+<ol>
+    <li>KOReader settings like font size, line spacing etc. have <b>default values</b>.</li>
+    <li>If you open a new book, KOReader refers to these <b>default values</b> to set the appearance of your book.</li>
+    <li>When you make changes in a book, like adjusting the <b>text size</b>, they affect only this specific book. Because your changes won't modify the <b>default values</b>, so newly opened books won't be affected.</li>
+    <li>But you have the ability to save your changes as <b>defaults</b> and when you do this, they will be used for the newly opened books too.</li>
+</ol>
+
+<br>
+
+
+
+    <p><b>Let's see on an example:</b></p>
+
+    <p>During this exercise, we increased the <span class=ui>Font weight</span> to <span class=ui>+1.00</span>. Now open the <span class=ui>Font weight</span> menu and press the <span class=ui>three dots</span> at the end of the <span class=ui>Font weight</span> setting line. A dialog window will open and you will see this: <span class=ui>Default value: +0.00</span>. This means that when you open another book, its font weight will still be <b>0 (Default value)</b>, instead of <b>+1</b> as we have set before.</p>
+
+<p>So to make a setting permanent, you have to set it as <b>default</b>. There are two methods in KOReader for setting these <b>default</b> values:</p>
+
+<ol>
+    <li>Setting individual settings as defaults</li>
+    <li>Setting "all of the settings" as defaults at once</li>
+</ol>
+
+<div class="L3-Smaller-heading">1. Setting individual settings as defaults</div>
+
+
+<p>Settings in KOReader generally can be set as default with a long-press. Have a look at the screenshot below:</p>
+
+        <img loading="lazy" src="pictures/defaults.png" style="width: 80%;">
+
+        <p>Values on the right side marked in blue can be long-pressed to set them as <b>defaults</b>. Let's say you want to make the text bolder. If you press on <span class=ui>+1</span> normally, it will change only for this book. But if you long-press on it, you will see this dialog: </p>
+
+        <img loading="lazy" src="pictures/default_confirmation.png" style="width: 60%;">
+
+
+        <p>If you press the <span class=ui>Set as default</span> button, this book and the books that you will open in the future will have <span class=ui>+1 font weight</span>.</p>
+
+        <p>This "long-press to set as default" rule works in menus too. For example when changing the font from the top menu:</p>
+        
+        <ul>
+            <li><span class=ui>short press</span> = change the font only for this book</li>
+            <li><span class=ui>long-press</span> = change the font for this book and all the future books</li>
+        </ul>
+
+        <p><span class=microns_info></span> Remember that, the books that you have already opened will keep their own settings. Changing defaults don't affect them.</p>
+        
+
+
+    <div class="L3-Smaller-heading">2. Setting "all of the settings" as defaults at once</div>
+    
+
+    <p>As the title says, you have the ability to set all of the current book settings as defaults. This is useful if you make many changes as we did in this chapter and you like the result so you want all your books to look like this.</p>
+
+    <p>You can save the current document settings as <span class=ui>defaults</span> by choosing:</p>
+    
+    <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_document.svg" style="width:22px;"> / Document settings / Save document settings as default</div>
+
+    <p>This will overwrite all the settings with the current document's settings. So all the books that you will open after pressing this menu item will look exactly like your current book.</p>
+
+    <p>But what we can do about already opened books? Well, assuming that you have pressed the menu item above and have set your <b>new defaults</b>, you can easily apply them to any book now. Just open the book that you want to change, go to the same menu and press this item:</p>
+
+    <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_document.svg" style="width:22px;"> / Document settings / Reset document settings to default</div>
+
+    <p>This basically tells KOReader to overwrite current book's settings with the <b>defaults</b> (that you saved before).</p>
+
+    <p>*** remove these from  CUSTOMIZING TEXT APPEARANCE</p>
+
+
+    <div class="L3-Smaller-heading">Profiles***</div>
+
+    <p>Ok, at this point you already know:</p>
+
+    <ul>
+        <li>How to change the individual settings of the current book</li>
+        <li>How to set settings as <b>defaults</b> so all books will have them</li>
+    </ul>
+
+    <p>Now we assume that you modified your defaults so whenever you open a new book, it will look exactly as you like it. Now you started reading a fantasy fiction series. And you decided to immerse yourself in the books so you installed a nice <b>medieval looking font</b> for this series (<a href="https://fonts.google.com/specimen/Eagle+Lake">here</a> is a nice one if you really need something like this). But since this is a very different font, you had to also change many settings like <span class=ui>line spacing</span>, <span class=ui>font weight</span>, <span class=ui>margins</span> etc.</p>
+
+    <p>To change all these settings for these fantasy books, you have two options according to what we have learned:</p>
+
+    <ol>
+        <li>You can change these settings for each book when you open them. This is very tedious, not a good solution.</li>
+        <li>You can change settings for one book and use the <span class=ui>Save document settings as default</span> feature. But this will affect all the newly opened books, which we don't want. We only want to apply the medieval font settings to these few medieval books.</li>
+    </ol>
+
+    <p>Luckily KOReader has a feature called <span class=ui>Profiles</span> that allows us to save a book's settings and apply them to other books (like copy & paste).</p>
+
+    <p>Now going back to our scenario, we assume that you have adjusted all the settings for your medieval fantasy book. Now we will go here:</p>
+
+    <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_tools.svg" style="width:22px;"> / Profiles / New with current book settings</div>
+
+    <p>It will ask for a name. You can enter something like <b>"Medieval Fiction"</b> and save. By doing this, we created a profile named <b>Medieval Fiction</b> which includes the settings for the current book. Now you can see it in the <span class=ui>Profiles</span> menu. After this, you can open a book and run this profile and all these settings will be applied.</p>
+
+    <p>And you can run this profile from:</p>
+
+    <ul>
+        <li><span class=ui>Profiles menu</span> mentioned above</li>
+        <li>With a <a href="#L1-gestures" class="internalink">Gesture</a></li>
+        <li>From a <a href="#L2-quickmenu" class="internalink">Quick Menu</a></li>
+    </ul>
+
+
+    <div class=info><span class=microns_info title="Contextual information"></span> You can also set a <b>trigger</b> for this profile so for example whenever you open a book from a certain directory, this profile can be automatically applied to it. Check the <a href="#L2-profiles" class="internalink">Profiles</a> section for more information.</div>
+
+</section>
+
+
+<div class="L1-Chapter-heading">↓ IGNORE - DOESN'T NEED CHECKING ↓</div>
+
+
+
+<p>✅ Replace list with table</p>
+
+
+
+<table class="borderless-table" style="width: 65%;  margin-left: auto; margin-right: auto;">
+
+        <tr>
+            <td width="50%"><a href="https://koreader.rocks/user_guide/bg.html">🇧🇬 Bulgarian</a></td>
+            <td><a href="https://koreader.rocks/user_guide/sr.html">🇷🇸 Serbian</a></td>
+        </tr>
+
+        <tr>
+            <td><a href="https://koreader.rocks/user_guide/zh_Hans.html">🇨🇳 Chinese (Simplified Han script)</a></td>
+            <td><a href="https://koreader.rocks/user_guide/sk.html">🇸🇰 Slovak</a></td>
+        </tr>
+
+                <tr>
+            <td><a href="https://koreader.rocks/user_guide/nl.html">🇳🇱 Dutch</a></td>
+            <td><a href="https://koreader.rocks/user_guide/sl.html">🇸🇮 Slovenian</a></td>
+        </tr>
+
+                <tr>
+            <td><a href="https://koreader.rocks/user_guide/fr.html">🇫🇷 French</a></td>
+            <td><a href="https://koreader.rocks/user_guide/es.html">🇪🇸 Spanish</a></td>
+        </tr>
+
+                <tr>
+            <td><a href="https://koreader.rocks/user_guide/ga.html">🇮🇪 Irish</a></td>
+            <td><a href="https://koreader.rocks/user_guide/ta.html">🇮🇳 Tamil</a></td>
+        </tr>
+
+                <tr>
+            <td><a href="https://koreader.rocks/user_guide/it.html">🇮🇹 Italian</a></td>
+            <td><a href="https://koreader.rocks/user_guide/uk.html">🇺🇦 Ukrainian</a></td>
+        </tr>
+                <tr>
+            <td><a href="https://koreader.rocks/user_guide/pt_BR.html">🇧🇷 Portuguese (Brazil)</a></td>
+            <td><a href="https://koreader.rocks/user_guide/vi.html">🇻🇳 Vietnamese</a></td>
+        </tr>
+                <tr>
+            <td><a href="https://koreader.rocks/user_guide/pt_PT.html">🇵🇹 Portuguese (Portugal)</a></td>
+            <td></td>
+        </tr>
+        </table>
+
+
+
+
+<div class="L2-Sub-heading">Guide for this user guide :)</div>
+
+    <p>This guide is primarily designed for color screens and a relatively modern browser. Especially if you are using it for the first time, we highly recommend reading this on a computer, tablet or a mobile phone. Seeing <b>user interface elements</b> and <b>menu paths</b> properly will make your life easier while learning how to use KOReader. Of course you can read this on your e-ink device too, but the experience will not be optimal.</p>
+    
+    <p>You can use the search function of your browser to find a specific topic or keyword (generally <b>Ctrl + F</b>). If you have a suggestion, correction or question related to this user guide, you can write to this <a href="https://github.com/koreader/koreader/issues/11147">GitHub discussion thread</a>.</p>
+
+  <br>
+
+        <div class="double-container" style="grid-template-columns: 1fr 4fr; gap: 0px; width: 400px; margin: 0 auto; text-align: right; padding: 0.8rem 0.8rem 0.4rem 1.2rem; border-radius: 12px; box-shadow: 0px 2px 5px -1px  var(--text-color) inset; background-color: var(--bg-color);"><div><img loading="lazy" class=img_inline src="pictures/no_ai.png" style="width: 80px;"></div><div><p style="text-indent: 0em; text-align: center;"><b>Text and images in this guide are<br>created and checked by humans</b></p></div></div>
+
+
+  
+  <br>
+
+<div class="L3-Smaller-heading">Parts of the text in this guide are color and shape coded according to their categories:</div>
+
+    <p><b></b></p>
+
+ 
+    <table class="borderless-table" style="width: 85%;  margin-left: auto; margin-right: auto;">
+
+        <tr>
+            <td width="60%"><p style="text-indent: 0em;">
+		    <span style="font-weight: bold;font-size: 1rem;">Parts of KOReader</span></p><p>These items always refer to something on the screen that you can set/select/tap as part of the KOReader user interface.</p></td>
+
+            <td><p><span class=ui>Status bar</span></p><p><span class=ui>Font weight</span></p></td>
+        </tr>
+
+        <tr>
+            <td><p style="text-indent: 0em;">
+                <span style="color:var(--green-color); font-weight: bold;font-size: 1rem;">Menu paths (green)</span></p>
+                <p>These are the locations of settings and menu items in the KOReader user interface.</p>
+            </td>
+
+            <td><div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/top_document.svg" style="width:22px;"> / Highlight style</div></td>
+        </tr>
+
+        <tr>
+            <td><p style="text-indent: 0em;">
+		    <span style="color: var(--external-color); font-weight: bold;font-size: 1rem;">External apps and services (purple)</span></p>
+        
+            <p>These are services or applications that can work with KOReader. They are marked because these are not a part of KOReader project so they are not under our control.</p>
+        
+            </td>
+            <td><span class=external>Calibre, Readwise, KoHighlights...</span></td>
+        </tr>
+
+        <tr>
+            <td><p style="text-indent: 0em;">
+                <span style="color:var(--internal-link-color); font-weight: bold;font-size: 1rem;">Internal links (teal)</span></p>
+                <p>These links with a house icon at the end, take you to the other parts of this guide.</p>
+            </td>
+                    
+            <td><a href="#L1-gestures" class="internalink">Gestures</a></td>
+        </tr>
+
+        <tr>
+            <td><p style="text-indent: 0em;">
+                <span style="color:var(--blue-color); font-weight: bold;font-size: 1rem;">External links (blue)</span></p>
+                <p>These are regular links that go outside the guide.</p>
+            </td>
+                    
+            <td><a href="https://www.gutenberg.org/">Project Gutenberg</a></td>
+        </tr>
+
+    </table>
+
+
+    <br>
+
+    <p>We also have different boxes throughout the guide to inform or warn you:</p>
+
+    <div class=warning><span class=microns_warning  title="Warning"></span> I am a warning box. I explain things when you need to be extra careful.</div>
+
+    <div class=info><span class=microns_info title="Contextual information"></span> I am an info box. I give contextual information or extra explanations.</div>
+
+    <div class=tip><span class=microns_tip title="Useful tip"></span> I am a tip box. I contain tips that makes your life easier when using KOReader.</div>
+
+    <p><span class=microns_warning title="Advanced topic"></span> I am an <b>ADVANCED</b> tag. If you see me on a topic, it means that you need to have a certain degree of technical knowledge like working with a file system, CSS knowledge, installation of external files etc. depending on the procedure.</p>
+
+    <p>***Add on-screen buttons here ↑</p>
+
+    <br>
+
+
+<!-- OUTER DIV-->
+</div>
+
+
+<!-- ANCHOR TEMPLATES -->
+
+<!--
+<div class="L1-Chapter-heading">
+<div class="L2-Sub-heading">
+<div class="L3-Smaller-heading">
+
+<div class="standard-text">
+
+<div class="menu-breadcrumbs"><span class="icon_green"> </span> TOP MENU / <img class="img_inline" src="pictures/top_bookmark.svg" style="width:26px;"> /  /  /  /  /</div>
+
+
+<img loading="lazy" src="pictures/" style="width:600px;">
+<img loading="lazy" class="img_inline" src="pictures/" style="width:26px;">
+
+<span class=ui>
+<span class=external>
+
+<a href=""></a>
+
+<div class=warning>
+    <span class="icon_red"></span> info
+    <span class="icon_red"></span> warning
+    <span class="icon_red"></span> tip
+
+<div class="double-container">
+    <div></div>
+    <div></div>
+</div>
+
+ANCHOR - Used to indicate a section in the file
+TODO - An item that is awaiting completion
+FIXME - An item that requires a bugfix
+REVIEW - An item that requires additional review
+NOTE - An important note for a specific code section
+-->
+
+<script>
+  (function() {
+    const nextBtn = document.getElementById('next-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const targets = document.querySelectorAll('[data-jump]');
+    let currentIndex = -1;
+
+    // Helper function to perform the jump
+    function jumpTo(index) {
+      currentIndex = index;
+      const target = targets[currentIndex];
+      
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      
+      // Trigger animation
+      target.classList.remove('flash-me');
+      void target.offsetWidth; 
+      target.classList.add('flash-me');
+      
+      setTimeout(() => target.classList.remove('flash-me'), 4500);
+    }
+
+    // Next Button
+    nextBtn.addEventListener('click', () => {
+      let nextIndex = (currentIndex + 1) % targets.length;
+      jumpTo(nextIndex);
+    });
+
+    // Previous Button
+    prevBtn.addEventListener('click', () => {
+      // The "+ targets.length" prevents negative numbers when subtracting
+      let prevIndex = (currentIndex - 1 + targets.length) % targets.length;
+      jumpTo(prevIndex);
+    });
+  })();
+</script>
+
+
+
+        		<script>
+			// =================================
+			// 🧠 JAVASCRIPT LOGIC
+			// =================================
+			
+			const tipsData = [
+			"KOReader has an alternative text highlighting method which is suitable for long and multi-page highlights. Read more: <a href='#L2-howtohighlight' class='internalink'>Highlight modes of KOReader</a>",
+            "KOReader has three types of touch scrolling. Default phone style <b>classic scrolling</b>, <b>turbo</b> for faster scrolling and <b>on-release</b> which is e-ink optimized. Read more: <a href='***add internal link target  ' class='internalink'>***</a>",
+			"You can set KOReader for a <b>draw pattern to unlock</b> kind of security:",
+			"You can see your detailed battery usage statistics",
+			"You can create nested <span class=ui>quick menus</span>",
+            "You can adjust page <span class=ui>page refresh rate</span> with gestures",
+            "You can change the <span class=ui>status bar</span> font",
+			"You can use keyboard shortcuts even if your device doesn't have a keyboard. KOReader supports Bluetooth keyboards and emulators.",
+			"If you have an Android OS based TV you can install KOReader on it.",
+            "You can use <span class=ui>Colllections</span> for triggering <span class=ui>Profiles</span> to create powerful automatic actions like \"increase page refresh rate when I open a file from the <b>Manga collection</b>\".",
+            "You can save your higlights directly into PDFs to see them when you open the PDF with other applications.",
+            "KOReader can import highlights from PDF files that is marked with other applications. Then you can export them to several formats and services.",
+            "You can copy some text and show it as QR code to quickly share it to a device with a camera.",
+            "You can control your KOReader from another device on the same network using the web browser",
+			// Add as many tips as you want here!
+			];
+			
+			let currentIndex = 0;
+			const totalTips = tipsData.length;
+			
+			// DOM Elements
+			const widget = document.getElementById('tip-widget');
+			const header = document.getElementById('tip-header');
+			const tipTextElement = document.getElementById('current-tip-text');
+			const counterElement = document.getElementById('tip-counter');
+			const prevButton = document.getElementById('prev-tip');
+			const nextButton = document.getElementById('next-tip');
+			const randomButton = document.getElementById('random-tip');
+			
+			/**
+			* Updates the UI with the current tip and counter state.
+			*/
+			function updateUI() {
+				// 1. Update Tip Text
+				tipTextElement.innerHTML = tipsData[currentIndex];
+				
+				// 2. Update Counter (e.g., 3/7)
+				counterElement.textContent = `${currentIndex + 1} / ${totalTips}`;
+				
+				// 3. Handle Button States (Prevent going out of bounds)
+				prevButton.disabled = currentIndex === 0;
+				nextButton.disabled = currentIndex === totalTips - 1;
+			}
+			
+			/**
+			* Displays a tip at a given index, handling wrap-around logic.
+			*/
+			function loadTip(index) {
+				// Ensure the index is within bounds (0 to totalTips - 1)
+				currentIndex = (index % totalTips + totalTips) % totalTips;
+				updateUI();
+			}
+			
+			/**
+			* Event Listeners for Buttons
+			*/
+			
+			// Next Tip Button
+			nextButton.addEventListener('click', () => {
+				loadTip(currentIndex + 1);
+				});
+				
+				// Previous Tip Button
+				prevButton.addEventListener('click', () => {
+					loadTip(currentIndex - 1);
+					});
+					
+					// Random Tip Button
+					randomButton.addEventListener('click', () => {
+						const randomIndex = Math.floor(Math.random() * totalTips);
+						loadTip(randomIndex);
+						});
+						
+
+							
+							// =================================
+							// 🚀 INITIALIZATION
+							// =================================
+							document.addEventListener('DOMContentLoaded', () => {
+								if (totalTips > 0) {
+									loadTip(currentIndex); // Load the first tip on page load
+									} else {
+										tipTextElement.textContent = "No tips available yet!";
+										counterElement.textContent = "0/0";
+									}
+									});
+		</script>
+
+</body>
+</html>
