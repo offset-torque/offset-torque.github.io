@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>User Guide Check 26.07 Release</title>
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<!-- ANCHOR CSS -->
+
+<style>
+
+html{
+    font-size: 100%;
+}
+
+body {
+    font-family: 'geologica', Arial, sans-serif;
+    font-weight: 300;
+    font-synthesis: none;
+    background-color: var(--container-color);
+    color: var(--text-color);
+    transition: background-color 0.5s;
+    max-width: 100%;
+    counter-reset: my-step-counter;
+}
+
+.layout {
+    display: flex;
+    gap: 1rem;
+}
+
+.content {
+    flex: 1;
+}
+
+.sidebar {
+    align-self: start;
+    position: sticky;
+    overflow-y: auto;
+    width: 290px;
+    min-width: 290px;
+    max-height: calc(100vh - 1rem);
+    top: 0.4rem;
+    padding: 0rem 0rem 0rem 0rem;
+    background-color: var(--sidebar-bg);
+    border: 1px solid var(--sidebar-border);
+    border-radius: 8px;
+    box-shadow: -1px 2px 2px -1px  var(--text-color);
+    scrollbar-width: thin;
+    scrollbar-color: var(--sidebar-scrollbar) transparent;
+}
+
+/* Scrollbar for Chrome, Safari, and Edge */
+.sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: #999;
+}
+
+
+#sidebarCloseBtn {
+    display: none; /* invisible on desktop */
+}
+
+.sidebar.hidden {
+    width: 0;
+    min-width: 0;
+}
+
+#sidebarToggleBtn {
+position: sticky;
+outline: none;
+cursor: pointer;
+user-select: none;
+
+top: 1rem;
+bottom: auto;
+left: 0rem;
+right: auto;
+
+display: inline-flex;
+align-items: center;
+justify-content: center;
+z-index: 99;
+
+font-family: microns;
+font-size: 1.4rem;
+width: 48px;
+height: 48px;
+padding: 4px 4px;
+
+color: #555047;
+background: linear-gradient(180deg, #fbf9f5 0%, #e5e0d3 100%);
+box-shadow: inset 0 1px 0 #ffffff, inset 0 -3px 0 #bbb4a1, 0 4px 6px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.1);
+
+border: 1px solid #c0b9a8;
+border-radius: 10px;
+}
+
+#sidebarToggleBtn:hover {
+    background: linear-gradient(180deg, #ffffff 0%, #eae5da 100%);
+    color: #33302b;
+}
+
+#sidebarToggleBtn:active {
+    box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.15),
+    inset 0 -1px 0 #bbb4a1,
+    0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* LIGHT THEME COLORS */
+:root {
+        --bg-color: #F8F4E8;
+        --container-color: #FFFCFD;
+        --text-color: #272112;
+        --bold-color: #000;
+
+        --sidebar-bg: rgba(249, 242, 229, 0.95);
+        --sidebar-border: #d7cfbf;
+        --sidebar-scrollbar: #CFBEA8;
+
+    
+        --red-color: #CE2126;
+        --green-color: #6AAA00;
+        --blue-color: #0278d9;
+        --orange-color: #F59E0B;
+        --link-color: #0278d9;
+        --internal-link-color: #26A69A;
+        --external-color: #b720d1;
+        --uitag-color: #EEEEEE;
+        --negative-text-color: #FFF;
+        --warning-bg-color: #ffeded;
+        --info-bg-color: #f0fafc;
+        --tip-bg-color: #f3fff1;
+    }
+    
+/* DARK THEME COLORS */
+    body.dark {
+        font-weight: 400;
+        --bg-color: #1a0f02;
+        --container-color: #474546;
+        --text-color: #F8E9C2;
+        --bold-color: #FFF;
+
+        --sidebar-bg: rgba(57, 50, 50, 0.95);
+        --sidebar-border: #d7cfbf;
+        --sidebar-scrollbar: #CFBEA8;
+    
+        --red-color: #fa504a;
+        --green-color: #d5ec0c;
+        --blue-color: #4FC3F7;
+        --orange-color: #FFB911;
+        --link-color: #4FC3F7;
+        --internal-link-color: #56d8c9;
+        --external-color: #ff61c5;
+        --uitag-color: #cfcfcf;
+        --negative-text-color: #000;
+        --warning-bg-color: #4e0000;
+        --info-bg-color: #004351;
+        --tip-bg-color: #0a4200;
+    }
+
+
+
+
+
+/* STANDARD FONT */
+@font-face {
+    font-family: 'geologica';
+    src: url('pictures/Geologica-VariableFont_CRSV\,SHRP\,slnt\,wght.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+/* MONOSPACE FONT */
+@font-face {
+    font-family: 'sourcecodepro';
+    src: url('pictures/SourceCodePro-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 200 900;
+    font-display: swap;
+}
+
+/* ICONS FONT */
+@font-face {
+    font-family: 'microns';
+    src: url('pictures/microns.otf') format('opentype');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
+/* ICONS CLASS */
+.microns {
+    font-family: 'microns';
+    font-size: 1rem;
+}
+
+.microns_warning {
+    font-family: 'microns';
+    color: var(--red-color);
+    font-size: 1.8rem;
+    line-height: 1;
+    padding-right: 0.2rem;
+}
+
+.microns_info {
+    font-family: 'microns';
+    color: var(--blue-color);
+    font-size: 1.8rem;
+    line-height: 1;
+    padding-right: 0.2rem;
+}
+
+.microns_tip {
+    font-family: 'microns';
+    color: var(--green-color);
+    font-size: 1.8rem;
+    line-height: 1;
+    padding-right: 0.2rem;
+}
+
+.microns_highlight {
+    font-family: 'microns';
+    color: #FFD700;
+    text-shadow: 0px 1px 2px black;
+    font-size: 1.2rem;
+    line-height: 1;
+    padding-right: 0.2rem;
+}
+
+/* TITLE IMAGE FONT */
+@font-face {
+	font-family: 'home_video';
+	src: url('pictures/Oxanium-Bold.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+}
+
+
+/* MAIN DIV */
+.outer-container {
+    max-width: 80ch;
+    margin: 0 auto;
+    background-color: var(--container-color);
+    padding-left: 2.2%;
+    padding-right: 2.2%;
+    padding-bottom: 3%;
+    transition: background-color 0.5s;
+    border-radius: 8px;
+}
+
+/* TWO COLUMN DIV - USED INSIDE OUTER*/
+.double-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.centering-div {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
+
+a {
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--link-color);
+    border-bottom: solid 2px var(--link-color);
+}
+
+a:hover {
+	background-color: var(--link-color);
+    color: var(--container-color);
+    border-radius: 2px;
+}
+
+.internalink {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--internal-link-color);
+    border-bottom: solid 2px var(--internal-link-color);
+}
+
+.internalink::after {
+    font-family: microns;
+	content: "";
+	color: var(--internal-link-color);
+    padding-left: 0.3rem;
+}
+
+.internalink:hover {
+	background-color: var(--internal-link-color);
+    color: var(--container-color);
+}
+
+b {
+    font-weight: 500;
+    color: var(--bold-color);
+}
+
+p {
+	line-height: 1.75;
+	color: var(--text-color);
+	text-align: justify;
+	text-indent: 1.5rem;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+hr {
+    max-width: 80%;
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, #00000000, var(--red-color), #00000000);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.hr-thin {
+    max-width: 80%;
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, #00000000, #CFBEA8, #00000000);
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+}
+
+ul {
+	margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    margin-left: 0rem;
+    padding-left: 0;
+    padding-left: 2.7rem;
+    list-style: disc;
+}
+
+ol {
+	margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    margin-left: 0rem;
+    padding-left: 0;
+    padding-left: 2.9rem;
+}
+
+li {
+	text-indent: 0rem;
+	line-height: 1.75;
+	color: var(--text-color);
+	text-align: justify;
+	margin-top: 0.45rem;
+	margin-bottom: 0.45rem;
+    list-style-position: outside;
+}
+
+li::marker {
+	font-weight: bold;
+}
+
+
+.language-list {
+  /* Columns */
+  column-count: 2;
+  column-gap: 4rem;
+
+  /* Centering */
+  width: fit-content;
+  margin: 0 auto;
+
+  /* Reset list container */
+  list-style: none;
+  padding: 0;
+}
+
+.language-list li {
+  display: block;            /* Prevents the newline/whitespace spacing bug */
+  break-inside: avoid;       /* Prevents splitting across columns */
+  white-space: nowrap;       /* Ensures every language stays on 1 line */
+  
+  /* Reset spacing and heights */
+  margin: 0;                 /* Clears any inherited theme margins */
+  padding: 4px 0;            /* Controls your vertical spacing tightly */
+  line-height: 1.6;          /* Overrides large navbar line-heights */
+}
+
+.language-list a {
+  text-decoration: none;
+  display: inline;           /* Ensures anchor doesn't add block margins */
+  border-bottom: none;
+}
+
+
+/* GENERAL IMAGES */
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.6rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.35);
+    max-width: 100%;
+    border-radius: 8px;
+    background: var(--container-color);
+}
+
+img.unstyled {
+    margin-top: 0;
+    margin-bottom: 0;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: none !important;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Dark mode image dimming */
+.dark img {
+    filter: brightness(0.7) contrast(1.3) sepia(0.2);
+    transition: filter 0.4s ease;
+}
+
+.dark img:hover {
+    filter: none;
+}
+
+
+/* INLINE IMAGES */
+.img_inline {
+    display: inline;
+    margin-top: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+    background: #FFF;
+    border-radius: 50%;
+}
+
+
+.borderless-table {
+    border-collapse: collapse;
+    width: 85%;
+    margin-top: 1rem;
+    margin-left: 0rem;
+}
+.borderless-table td {
+    height: 1.4rem;
+    text-align: center;
+    padding: 0.8rem 0.5rem 0.8rem 0.5rem;
+    border-bottom: 1px dotted var(--text-color);
+}
+
+.grid-table {
+    border-collapse: collapse;
+    width: 85%;
+    margin-top: 1rem;
+    margin-left: 0rem;
+}
+.grid-table td {
+    height: 1.4rem;
+    text-align: center;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    /* border-bottom: 1px solid var(--text-color); */
+    border: 1px solid var(--text-color);
+}
+
+
+
+/* MAIN CHAPTER HEADINGS - CENTERED */
+.L1-Chapter-heading {
+    background-color: var(--container-color);
+    color: var(--red-color);
+    border: 2px solid var(--red-color);
+    border-radius: 8px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 0.8rem;
+    box-shadow: 0px 3px 4px -2px var(--text-color);
+    padding: 4px 4px;
+    break-before: page;
+}
+
+/* SUB HEADINGS - CENTERED */
+.L2-Sub-heading {
+    color: var(--red-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 3px;
+    border-bottom: 2px solid var(--red-color);
+}
+
+/* SMALL HEADINGS - LEFT ALIGNED */
+.L3-Smaller-heading {
+    color: var(--red-color);
+    font-weight: 500;
+    font-size:1.1rem;
+    text-indent: 1.5rem;
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+
+
+
+
+/* TIP, NOTE, WARNING BOX LABELS */
+.label_red {
+    font-family: sourcecodepro;
+	font-weight: 700;
+    color: var(--red-color);
+    border: 2px solid  var(--red-color);
+    border-radius:6px;
+    padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+}
+
+.label_blue {
+    font-family: sourcecodepro;
+	font-weight: 700;
+    color: var(--blue-color);
+    border: 2px solid  var(--blue-color);
+    border-radius:6px;
+    padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+}
+
+.label_green {
+    font-family: sourcecodepro;
+	font-weight: 700;
+    color: var(--green-color);
+    border: 2px solid  var(--green-color);
+    border-radius:6px;
+    padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+}
+
+.label_orange {
+    font-family: sourcecodepro;
+	font-weight: 700;
+    color: var(--orange-color);
+    border: 2px solid  var(--orange-color);
+    border-radius:6px;
+    padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+}
+
+
+
+
+
+/* COLORED TEXTS */
+
+/* USER INTERFACE ELEMENTS OF KOREADER*/
+.ui {
+    font-family: sourcecodepro;
+    background-color: var(--uitag-color);
+    box-shadow: 1px 1px 1px 0px #818181;
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 0.9em;
+    font-weight: 700;
+    color: #474546;
+    margin-right: 2px;
+}
+
+
+/* EXTERNAL LINKS AND SERVICES*/
+.external {
+    font-weight: 700;
+    color: var(--external-color);
+}
+
+
+/* MENU PATHS OF ACTIONS*/
+.menu-breadcrumbs {
+    font-family: sourcecodepro;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    width: fit-content;
+    padding: 0.2rem 0.3rem 0.4rem 0.3rem;
+    max-width: 90%;
+    line-height: 1.6;
+    color: var(--green-color);
+    background-color: var(--container-color);
+    margin-top: 0.8rem;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 1px solid  var(--green-color);
+    border-bottom: 1px solid  var(--green-color);
+}
+
+.menu-breadcrumbs::before {
+font-family: microns;
+    font-weight: 800;
+	content: "";
+	color: var(--green-color);
+    padding-right: 0.2rem;
+    display: inline-block;
+}
+
+.menu-breadcrumbs + li {
+    margin-top: 2.6rem;
+}
+
+
+
+
+
+/* TIP, NOTE, WARNING BOXES */
+.warning {
+    font-size: 0.9rem;
+    background-color: var(--warning-bg-color);
+	border: 0px solid var(--red-color);
+    border-radius: 12px;
+    box-shadow: 0px 2px 6px -2px inset var(--text-color);
+	color: var(--text-color);
+	line-height: 1.8;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 1% 1.6% 1.2% 1.6%;
+	text-align: justify;
+    text-indent: 0em;
+}
+
+li .warning { 
+    line-height: 1.8; 
+}
+
+.info {
+    font-size: 0.9rem;
+    background-color: var(--info-bg-color);
+	border: 0px solid var(--blue-color);
+    border-radius: 12px;
+    box-shadow: 0px 2px 6px -2px inset var(--text-color);
+	color: var(--text-color);
+	line-height: 1.8;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 1% 1.6% 1.2% 1.6%;
+	text-align: justify;
+    text-indent: 0em;
+}
+
+li .info { 
+    line-height: 1.8; 
+}
+
+.tip {
+    font-size: 0.9rem;
+    background-color: var(--tip-bg-color);
+	border: 0px solid var(--green-color);
+    border-radius: 12px;
+    box-shadow: 0px 2px 6px -2px inset var(--text-color);
+	color: var(--text-color);
+	line-height: 1.8;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 1% 1.6% 1.2% 1.6%;
+	text-align: justify;
+    text-indent: 0em;
+}
+
+li .tip { 
+    line-height: 1.8; 
+}
+
+
+
+
+
+/* TOC styles*/
+.TOC-heading {
+    font-weight: 600;
+    font-size:2rem;
+    line-height: 2;
+    text-align: center;
+    color:  var(--red-color);
+    break-before: page;
+}
+
+.toc {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc a {
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--text-color);
+    border-bottom: none;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.toc a:hover {
+    font-weight: 700;
+    background-color: var(--red-color);
+    color: var(--container-color);
+    border-bottom: none;
+    box-shadow:  -1px 4px 7px -2px  var(--text-color) inset;
+    border-radius: 6px;
+}
+
+.toc ul {
+    list-style: none;
+    padding-left: 0.8em;
+    margin: 0rem;
+}
+
+/* Styling for 2nd level */
+.toc ul ul {
+    padding-left: 2.6em;
+}
+
+/* Main level square bullet */
+.toc > li > a::before {
+    content: "";
+    display: inline-block;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    background-color: var(--red-color);
+    width: 1.1rem;
+    height: 1.1rem;
+    transition: background-color 0.5s ease;
+}
+
+.toc > li > a:hover::before {
+    background-color: var(--container-color);
+}
+
+.toc > li > a {
+    font-weight: 600 !important;
+    color: var(--red-color);
+    margin-top: 0rem;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    text-align: left;
+}
+
+/* More space after the main section headers */
+.toc > li {
+    margin-top: 0rem;
+    margin-bottom: 1.6rem;
+}
+
+/* Adding a little space before a nested list */
+.toc li > ul {
+    margin-left: 1rem;
+    margin-top: 0rem;
+}
+
+
+
+
+
+/* SIDEBAR TOC */
+.sidebar-toc {
+    list-style: none;
+    padding-left: 0rem;
+}
+
+.sidebar-toc a {
+    padding: 0.4rem 0.8rem;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+    border-bottom: none;
+    text-align: left;
+}
+
+.sidebar-toc a:hover {
+    background-color: var(--red-color);
+    color: var(--negative-text-color);
+    border-bottom: none;
+    border-radius: 4px;
+}
+
+.sidebar-toc ul li {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Top-level items */
+.sidebar-toc > li {
+    margin-bottom: 0.6rem;
+
+}
+.sidebar-toc > li > a {
+    line-height: 1.6;
+    font-weight: 700 !important;
+    color: var(--red-color);
+    margin-top: 0rem;
+    font-size: 0.95rem;
+    display: inline-flex;
+    text-align: left;
+}
+
+/* Nested list */
+.sidebar-toc ul {
+    list-style: none;
+    padding-left: 0rem;
+    margin: 0rem;
+    
+}
+.sidebar-toc li > ul {
+    margin-left: 0rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* GO TO THE ToC BUTTON */
+#TocButton {
+    display: none; /* Hidden by default */
+    outline: none;
+    position: fixed;
+    top: 0.5rem;
+    bottom: auto;
+    left: auto;
+    right: 1rem;
+    z-index: 99;
+
+    background-color: var(--container-color);
+    border: 1px solid var(--red-color);
+    padding: 0rem 0.4rem 0rem 0.4rem;
+    color: red;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -2px var(--text-color);
+    
+    font-family: mavenpro;
+    font-size: 2rem;
+    font-weight: bold;
+    text-indent: 0em;
+}
+
+#TocButton:hover {
+    text-shadow: 0px 0px 6px #FFFCFD;
+    }
+
+
+
+
+/* NEXT HEADING button */
+#nextHeadingBtn {
+    display: none; /* Hidden by default */
+    outline: none;
+    position: fixed;
+    top: 4rem;
+    bottom: auto;
+    right: 1rem;
+    z-index: 99;
+
+    background-color: var(--container-color);
+    border: 1px solid var(--red-color);
+    padding: 0rem 0.4rem 0rem 0.4rem;
+    color: red;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -2px var(--text-color);
+    
+    font-size: 2rem;
+    font-weight: bold;
+    text-indent: 0em;
+}
+
+#nextHeadingBtn.show {
+    display: block;
+    opacity: 1;
+}
+
+#nextHeadingBtn:hover {
+    text-shadow: 0px 0px 6px #FFFCFD;
+    }
+
+
+
+
+/* DARK MODE SWITCH */
+
+.switch {
+
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+
+    /* 2. AUTO-CALCULATING VARIABLES (Change --size to resize everything) */
+    --size: 48px; 
+    --icon-size: calc(var(--size) * 0.6);
+    --offset: calc((var(--size) - var(--icon-size)) / 2);
+
+    width: var(--size);
+    height: var(--size);
+}
+
+/* Hide checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* THE SLIDER (Dark Moon State - Fixed for Sticky) */
+.switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    width: 100%;  /* Prevents sticky collapse */
+    height: 100%; /* Prevents sticky collapse */
+    border-radius: 50%;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    background: linear-gradient(180deg, #537bea 0%, #22252e 100%);
+    border: 1px solid #1a1c23;
+    box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -3px 0 #15171e,
+        0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* MOON ICON (Auto-Calculated) */
+.switch .slider:before {
+    position: absolute;
+    content: "";
+    height: var(--icon-size);
+    width: var(--icon-size);
+    left: var(--offset);
+    bottom: var(--offset);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 50%;
+    
+    box-shadow: inset calc(var(--icon-size) * -0.27) calc(var(--icon-size) * -0.21) 0 #ffdf2c;
+    filter: drop-shadow(0 0 3px rgba(255, 223, 44, 0.3));
+    transform: rotate(-15deg);
+}
+
+/* SUN STATE (Light Cream - Checked) */
+.switch input:checked + .slider {
+    background: linear-gradient(180deg, #9cd5f2 0%, #ffffff 100%);
+    border-color: #b8b1a0;
+    box-shadow: 
+        inset 0 1px 0 #ffffff,
+        0 4px 8px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+/* SUN ICON (Auto-Calculated) */
+.switch input:checked + .slider:before {
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 
+        inset calc(var(--icon-size) * -1) 0px 0 #ffdf2c,
+        0 0 6px rgba(243, 156, 18, 0.3);
+    filter: none;
+    transform: rotate(0deg) scale(0.85);
+}
+
+/* TACTILE CLICK EFFECT */
+.switch:active .slider {
+    transform: translateY(2px);
+    box-shadow: 
+        inset 0 1px 2px rgba(0, 0, 0, 0.2),
+        0 1px 2px rgba(0, 0, 0, 0.1);
+}
+}
+
+
+/* PROOFREADING MARKERS */
+.yellow-mark {
+    border-radius: 0.4em 1em 0.6em;
+	padding: 2px 6px;
+	margin: -3px -6px;
+    color: #322814;
+    padding: 6px;
+font-weight: bold;
+color: #322814;
+text-shadow: 0px 0px 1px var(--bold-shadow-color);
+line-height: 2;
+    background-image: linear-gradient(
+    100deg,
+    hsl(58deg 87% 94%) 0%,
+    hsl(57deg 91% 87%) 5%,
+    hsl(57deg 94% 78%) 30%,
+    hsl(57deg 94% 78%) 65%,
+    hsl(57deg 91% 87%) 95%,
+    hsl(58deg 87% 94%) 100%
+);
+}
+
+.green-mark {
+    border-radius: 0.4em 1em 0.6em;
+	padding: 2px 6px;
+	margin: -3px -6px;
+    color: #322814;
+        background-image: linear-gradient(
+    100deg,
+    hsl(93deg 100% 96%) 0%,
+    hsl(82deg 99% 83%) 10%,
+    hsl(80deg 96% 75%) 39%,
+    hsl(80deg 96% 75%) 59%,
+    hsl(82deg 99% 83%) 85%,
+    hsl(93deg 100% 96%) 100%
+);
+}
+
+
+
+
+
+/* Jump to new sections buttons */
+#controls {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    display: flex;
+    flex-direction: column; /* Stack them vertically */
+    gap: 10px;
+    z-index: 1000;
+}
+
+#controls button {
+    font-weight: bold;
+    padding: 5px ;
+    background: var(--text-color) ;
+    color: var(--container-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+/* Simulated e-reader */
+@keyframes colorCycle {
+	0% {background-color: #e5e1dc;}
+	30% {background-color: #e5e1dc;}
+	40% {background-color: #6b6b6b;}
+	60% {background-color: #3b3b3b;}
+	75% {background-color: #e5e1dc;}
+	100% {background-color: #e5e1dc;}
+}
+
+.e-reader {
+	text-align: center;
+	font-family: 'home_video';
+	font-size: 1.6em;
+	line-height: 2rem;
+	background-color: #e5e1dc;
+	color: #7b7b7b;
+	cursor: pointer;
+	
+	border: 12px solid #4d4d4d;
+	border-left: 34px solid #4d4d4d;
+	display: inline-flex;
+	align-items: center;
+	border-radius: 8px;
+	/* text-shadow: 0px 0px 1px #FFF; */
+	padding: 1.3rem 1.55rem 0.5rem 1.55rem;
+	box-shadow: 0px 6px 6px 0px var(--text-color), 0px 4px 4px #585858 inset, 0px -4px 4px #f5f1eb inset;
+	
+	/* --- Animation Properties --- */
+	animation-name: colorCycle;
+	animation-duration: 1.8s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-delay: 2s;
+}
+
+.screen-text {
+	white-space: pre; /* Preserves spaces/tabs*/
+}
+
+@keyframes blinker {
+	from, to { opacity: 1; }
+	50% { opacity: 0; }
+}
+
+
+
+
+
+/* MOBILE STYLES */
+@media (max-width: 430px) {
+
+.sidebar {
+    align-self: auto; /* cancel sticky/flex alignment */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    max-height: 100vh;
+    z-index: 100;       /* above the toggle btn (99) */
+    transform: translateX(0);
+    border-radius: 0;
+    box-shadow: 3px 0 8px rgba(0,0,0,0.5);
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+    width: 300px;
+    min-width: 300px;
+}
+
+/* Show the close button only on mobile */
+#sidebarCloseBtn {
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: var(--red-color);
+    padding: 4px 8px;
+    line-height: 1;
+}
+
+/* Target all img tags that DO NOT have the class .inline */
+img:not(.img_inline) {
+    width: 100% !important;
+    height: auto; /*  Maintain aspect ratio */
+}
+
+ul {
+    padding-left: 1rem;
+
+}
+
+ol {
+    padding-left: 1rem;
+}
+
+.warning {
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+.info {
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+.tip {
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+#TocButton {
+    top: auto;
+    bottom: 2%;
+    left: 3%;
+    right: auto;
+    font-size: 1rem;
+}
+
+#nextHeadingBtn {
+    top: auto;
+    bottom: 2%;
+    font-size: 1rem;
+}
+
+
+.language-list {
+column-count: 1; /* Automatically drops to 1 column on phones */
+}
+
+
+}
+/* MOBILE STYLES */
+
+
+
+
+
+/* New topics class */
+.flash-me {
+animation: glow-highlight 1s ease-out 4;
+border-radius: 6px;
+}
+
+/* New topic animation */
+@keyframes glow-highlight {
+    0% { outline: 0px solid transparent; }
+    50% { outline: 6px solid var(--red-color); }
+    100% { outline: 0px solid transparent; }
+}
+
+
+
+</style>
+</head>
+
+
+
+<body>
+
+
+
+
+
+
+<div class="outer-container">
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const themeSwitcher = document.getElementById('theme-switcher');
+    
+    // Load saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark');
+            themeSwitcher.checked = true;
+        }
+    
+    // // Detect OS preference if no saved preference
+    //     else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    //         document.body.classList.add('dark');
+    //         themeSwitcher.checked = true;
+    //     }
+    
+    // Handle toggle switch
+        themeSwitcher.addEventListener('change', function() {
+            document.body.classList.toggle('dark');
+            localStorage.setItem('theme', this.checked ? 'dark' : 'light');
+        });
+    });
+    </script>
+
+
+    <label class="switch">
+        <input type="checkbox" id="theme-switcher">
+        <span class="slider round"></span>
+    </label>
+
+<br>
+
+<div id="controls">
+    <button id="prev-btn" title="Browse new additions to the guide">⭐<span class=microns></span></button>
+    <button id="next-btn" title="Browse new additions to the guide">⭐<span class=microns></span></button>
+</div>
+
+    <div style="box-shadow: 0px 4px 8px -1px  var(--text-color) inset; padding: 1rem; border-radius: 12px;"> 
+        
+
+    <p>You can click on your name to directly go to your section:</p>
+
+
+        <ul>
+            <!-- <li><a href="#mergen3107">mergen3107</a></li>
+            <li><a href="#ryanwwest">ryanwwest</a></li>
+            <li><a href="#commodore64user">Commodore64User</a></li>
+            <li><a href="#poirez">poire-z</a></li> -->
+            <li><a href="#hius07">hius07</a></li>
+            <li><a href="#frenzie">Frenzie</a></li>
+
+
+            
+            
+        </ul>
+        
+    </div>
+
+
+    <!-- ANCHOR hius07 -->
+    <div class="L1-Chapter-heading"  id="hius07">@ hius07</div>
+
+
+<p>🔵 To library management - insert</p>
+
+<div class="L2-Sub-heading" id="L2-synchronizingprogress" data-jump>9.7 Book Metadata Archive</div>
+
+    <p>First we will explain KOReader's file deletion behavior so you will better understand the <b>Book Metadata Archive</b> feature:</p>
+
+    <p>Normally when you copy a document to your device and open it for the first time, KOReader creates a new directory with a name like <span class=ui>your_document_name.sdr</span> and uses this directory to keep the settings, annotations and progress for this document.</p>
+
+    <p>When you delete a document using KOReader's <span class=ui>File Browser</span>, KOReader deletes this <b>.sdr directory</b> too. Which means that you lose all the settings, annotations and progress for the deleted document. If you copy this document to your e-reader again and open it with KOReader, it will be like opening it for the first time.</p>
+
+    <p>But for example, what if you want to delete the finished books (maybe you don't like clutter in your library or you are out of space), but also you don't want to lose the highlights from  these books? <b>Book Metadata Archive</b> feature allows you to do this.</p>
+
+    <p>This is how it works:</p>
+
+    <ol>
+        <li>First you have to activate the feature by choosing an <b>archive location</b> here:
+            <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/gear.svg" style="width:26px;"> / Document / Book metadata archive / Archive location:</div>
+        </li>
+
+        <li>Now when you delete a document from the <span class=ui>File Browser</span>, you will see this option is enabled in the confirmation dialog: <span class=ui>[ ] save book to metadata archive</span></li>
+
+        <li>If you check this option when deleting, KOReader will copy the settings file for this document to your archive directory which you have chosen at the first step above.</li>
+
+        <li>Then KOReader will delete your document and its associated <span class=ui>your_document_name.sdr</span> directory.</li>
+    </ol>
+
+    <p>Your document is deleted, but its settings are in the archive. If you copy this document to your device again and open it, KOReader will notice that the settings for this document are in the archive and tell you this: <b>"This book was previously opened on this device. Would you like to restore its metadata from the archive?"</b> <span class=ui>Restore</span> button will use this archived settings file for this document so you will get back the settings, annotations and progress for this document.</p>
+
+<br>
+
+    <p><b>Save metadata to archive on book closing</b></p>
+    <p>If you enable this option from the same menu mentioned above, KOReader will save a copy of the the <b>settings file</b> of every document when closing it. Even if you delete a document and its .sdr folder outside of KOReader (Android file manager, when connected to your pc...) you will still have a backup of your document's settings.</p>
+
+    <p><span class=microns_info></span> If <span class=ui>Save metadata to archive on book closing</span> option is enabled, but you uncheck the <span class=ui>save book to metadata archive</span> option in the file delete dialog, KOReader will delete the previously created settings archive file for this document.</p>
+
+    	<div class=warning><span class=microns_warning  title="Warning"></span> KOReader recognizes deleted files from their file hashes. This means the file you copied back to your device should be identical to the deleted file. Any changes like Calibre metadata written into the file or PDF highlights added, will change the hash of a file. In this case KOReader can't offer you the <span class=ui>Restore</span> option because it will see this as a different file. See the next section of the guide for more detailed info: <a class="internalink" href="L2-metadatastorage">Book Metadata Storage</a></div>
+<hr>
+
+
+
+<div class="L2-Sub-heading" id="L2-profileautoexec">11.4 Profile Auto-execution</div>
+	
+<p>🔵 These will be added to the existing table</p>
+
+
+	<table class="grid-table" style="width: 100%;  margin-left: auto; margin-right: auto; table-layout: fixed; border: none;">
+
+    <tr>
+        <td><b style="color: var(--red-color);">Trigger</b></td><td><b style="color: var(--red-color);">Sub-conditions</b></td>
+    </tr>
+
+    <tr>
+        <td data-jump><span class=ui>On read timer expiry</span> <p>Run this profile every time the read timer finishes</p></td><td>-</td>
+    </tr>
+
+        <tr>
+        <td data-jump><span class=ui>On auto night mode activation</span> <p>Run this profile every time the Night Mode (inverted screen color) is toggled or screen warmth is changed</p></td><td><span class="microns_info"></span> <p>This trigger will activate on <b>every warmth change</b>. You can limit this by enabling the <span class=ui>Only within time interval</span> option.</p></td>
+    </tr>
+
+
+    </table>
+
+
+
+<section id="frenzie">
+
+    <!-- ANCHOR Frenzie -->
+    <div class="L1-Chapter-heading">@ Frenzie</div>
+
+<p>🔵 To TIPS</p>
+
+    <div class="L3-Smaller-heading" data-jump>Ghosting on sleep screen</div>
+
+        <p>In some cases (depending on many factors like book contents, lightness of sleep screen image and reader model) you can see some ghosting/residue on your <b>sleep screen</b> despite the refresh before sleep.  You can get rid of this by increasing the number of refreshes from here:</p>
+
+        <div class="menu-breadcrumbs">TOP MENU / <img class="img_inline" src="pictures/gear.svg" style="width:22px;"> / Screen / E-ink settings / Sleep screen anti-ghosting redraws</div>
+
+    
+<!-- OUTER DIV-->
+</div>
+
+
+<!-- ANCHOR TEMPLATES -->
+
+<!--
+<div class="L1-Chapter-heading">
+<div class="L2-Sub-heading">
+<div class="L3-Smaller-heading">
+
+<div class="standard-text">
+
+<div class="menu-breadcrumbs"><span class="icon_green"> </span> TOP MENU / <img class="img_inline" src="pictures/top_bookmark.svg" style="width:26px;"> /  /  /  /  /</div>
+
+
+<img loading="lazy" src="pictures/" style="width:600px;">
+<img loading="lazy" class="img_inline" src="pictures/" style="width:26px;">
+
+<span class=ui>
+<span class=external>
+
+<a href=""></a>
+
+<div class=warning>
+    <span class="icon_red"></span> info
+    <span class="icon_red"></span> warning
+    <span class="icon_red"></span> tip
+
+<div class="double-container">
+    <div></div>
+    <div></div>
+</div>
+
+ANCHOR - Used to indicate a section in the file
+TODO - An item that is awaiting completion
+FIXME - An item that requires a bugfix
+REVIEW - An item that requires additional review
+NOTE - An important note for a specific code section
+-->
+
+<script>
+  (function() {
+    const nextBtn = document.getElementById('next-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const targets = document.querySelectorAll('[data-jump]');
+    let currentIndex = -1;
+
+    // Helper function to perform the jump
+    function jumpTo(index) {
+      currentIndex = index;
+      const target = targets[currentIndex];
+      
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      
+      // Trigger animation
+      target.classList.remove('flash-me');
+      void target.offsetWidth; 
+      target.classList.add('flash-me');
+      
+      setTimeout(() => target.classList.remove('flash-me'), 4500);
+    }
+
+    // Next Button
+    nextBtn.addEventListener('click', () => {
+      let nextIndex = (currentIndex + 1) % targets.length;
+      jumpTo(nextIndex);
+    });
+
+    // Previous Button
+    prevBtn.addEventListener('click', () => {
+      // The "+ targets.length" prevents negative numbers when subtracting
+      let prevIndex = (currentIndex - 1 + targets.length) % targets.length;
+      jumpTo(prevIndex);
+    });
+  })();
+</script>
+
+
+
+        		<script>
+			// =================================
+			// 🧠 JAVASCRIPT LOGIC
+			// =================================
+			
+			const tipsData = [
+			"KOReader has an alternative text highlighting method which is suitable for long and multi-page highlights. Read more: <a href='#L2-howtohighlight' class='internalink'>Highlight modes of KOReader</a>",
+            "KOReader has three types of touch scrolling. Default phone style <b>classic scrolling</b>, <b>turbo</b> for faster scrolling and <b>on-release</b> which is e-ink optimized. Read more: <a href='***add internal link target  ' class='internalink'>***</a>",
+			"You can set KOReader for a <b>draw pattern to unlock</b> kind of security:",
+			"You can see your detailed battery usage statistics",
+			"You can create nested <span class=ui>quick menus</span>",
+            "You can adjust page <span class=ui>page refresh rate</span> with gestures",
+            "You can change the <span class=ui>status bar</span> font",
+			"You can use keyboard shortcuts even if your device doesn't have a keyboard. KOReader supports Bluetooth keyboards and emulators.",
+			"If you have an Android OS based TV you can install KOReader on it.",
+            "You can use <span class=ui>Colllections</span> for triggering <span class=ui>Profiles</span> to create powerful automatic actions like \"increase page refresh rate when I open a file from the <b>Manga collection</b>\".",
+            "You can save your higlights directly into PDFs to see them when you open the PDF with other applications.",
+            "KOReader can import highlights from PDF files that is marked with other applications. Then you can export them to several formats and services.",
+            "You can copy some text and show it as QR code to quickly share it to a device with a camera.",
+            "You can control your KOReader from another device on the same network using the web browser",
+			// Add as many tips as you want here!
+			];
+			
+			let currentIndex = 0;
+			const totalTips = tipsData.length;
+			
+			// DOM Elements
+			const widget = document.getElementById('tip-widget');
+			const header = document.getElementById('tip-header');
+			const tipTextElement = document.getElementById('current-tip-text');
+			const counterElement = document.getElementById('tip-counter');
+			const prevButton = document.getElementById('prev-tip');
+			const nextButton = document.getElementById('next-tip');
+			const randomButton = document.getElementById('random-tip');
+			
+			/**
+			* Updates the UI with the current tip and counter state.
+			*/
+			function updateUI() {
+				// 1. Update Tip Text
+				tipTextElement.innerHTML = tipsData[currentIndex];
+				
+				// 2. Update Counter (e.g., 3/7)
+				counterElement.textContent = `Tip ${currentIndex + 1} of ${totalTips}`;
+				
+				// 3. Handle Button States (Prevent going out of bounds)
+				prevButton.disabled = currentIndex === 0;
+				nextButton.disabled = currentIndex === totalTips - 1;
+			}
+			
+			/**
+			* Displays a tip at a given index, handling wrap-around logic.
+			*/
+			function loadTip(index) {
+				// Ensure the index is within bounds (0 to totalTips - 1)
+				currentIndex = (index % totalTips + totalTips) % totalTips;
+				updateUI();
+			}
+			
+			/**
+			* Event Listeners for Buttons
+			*/
+			
+			// Next Tip Button
+			nextButton.addEventListener('click', () => {
+				loadTip(currentIndex + 1);
+				});
+				
+				// Previous Tip Button
+				prevButton.addEventListener('click', () => {
+					loadTip(currentIndex - 1);
+					});
+					
+					// Random Tip Button
+					randomButton.addEventListener('click', () => {
+						const randomIndex = Math.floor(Math.random() * totalTips);
+						loadTip(randomIndex);
+						});
+						
+
+							
+							// =================================
+							// 🚀 INITIALIZATION
+							// =================================
+							document.addEventListener('DOMContentLoaded', () => {
+								if (totalTips > 0) {
+									loadTip(currentIndex); // Load the first tip on page load
+									} else {
+										tipTextElement.textContent = "No tips available yet!";
+										counterElement.textContent = "0/0";
+									}
+									});
+		</script>
+
+</body>
+</html>
